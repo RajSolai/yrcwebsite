@@ -1,38 +1,256 @@
-.App {
-  text-align: center;
+:root {
+  font-size: 16px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  margin: 0;
+  padding: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  padding: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  margin: 0.5rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+.app {
+  padding: 0rem 8rem 0rem 8rem;
+}
+.brand {
+  font-size: 1rem;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 2rem;
+  font-weight: 900;
+  margin-right: 2rem;
+}
+.article {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+}
+.spacer {
+  margin-top: 6.6rem;
+}
+.form {
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 1rem;
+}
+.nav-bar {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.nav-list {
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  list-style: none;
+}
+.nav-link {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+}
+.link {
+  text-decoration: none;
+  outline: none;
+}
+.link:active {
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+.img-box {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.link:focus {
+  text-decoration: none;
+  border: none;
+}
+.nav-item {
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-decoration: none;
+  margin: 0 0 0 1rem;
+}
+.nav-link a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 12px;
+}
+.nav-item:hover {
+  background-color: #e84a5f;
+  color: #fff;
+  transition: ease-in 200ms;
+}
+.nav-item:active {
+  font-weight: bold;
+}
+.nav-item:hover .nav-link {
+  color: #ffffff;
+}
+.jumbotron {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4.5rem;
+}
+.jumbo-img {
+  padding: 1rem;
+  margin: 1rem;
+}
+.no-m-p {
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
+  align-content: stretch;
+  text-decoration: none;
+}
+.jumbo-box {
+  display: flex;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+}
+.red {
+  background-color: #ed1c24;
+  color: #ffffff;
+}
+.blue {
+  background-color: #2fc4b2;
+  color: #fff;
+}
+.green {
+  background-color: #a8df65;
+  color: #000000;
+}
+.purple {
+  background-color: #5c2a9d;
+  color: #fff;
+}
+.jumbotron img {
+  padding-right: 1rem;
+  padding-left: 0rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.jumbotron div h1 {
+  font-weight: 900;
 }
 
-.App-link {
-  color: #61dafb;
+/* for card */
+
+.envelope {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.card {
+  margin: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.card-content {
+  padding: 1rem;
+  text-overflow: clip;
+  overflow: fade(10px);
+}
+.card-img {
+  border-radius: 8px 8px 0px 0px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.card-title {
+  font-weight: 600;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ed1c23;
+}
+.story {
+  overflow: fade(10px);
+}
+.card-ctrl {
+  margin: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  padding: 0.5rem;
+  background-color: #fff;
+  color: #000000;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  border: 2px #e84a5f solid;
+  transition: ease-in 200ms;
+}
+button:hover {
+  background-color: #e84a5f;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 600px) {
+  .app {
+    margin: 0;
+    padding: 0;
   }
-  to {
-    transform: rotate(360deg);
+  .jumbotron {
+    flex-direction: column;
+  }
+  .no-m-p {
+    flex-direction: column;
+  }
+  .envelope {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand {
+    padding: 0;
+    margin: 0;
+    text-overflow: clip;
+  }
+  .jumbo-img {
+    margin: 0;
+    margin-left: 2rem;
+    padding: 0;
+  }
+  .nav-item {
+    margin: 0;
+  }
+  .spacer {
+    margin: 5rem;
   }
 }

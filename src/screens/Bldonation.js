@@ -1,0 +1,153 @@
+import React from "react";
+import { Grow, TextField, Paper } from "@material-ui/core";
+import Axios from "axios";
+import { Link } from "react-router-dom";
+
+class Bldonation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      contact: "",
+      email: "",
+      bldgrp: "",
+      hospitalname: "",
+      rtp: "",
+    };
+    this.uploadbldRq = this.uploadbldRq.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+  async uploadbldRq() {
+    let data = {
+      name: this.state.name,
+      contact: this.state.contact,
+      email: this.state.email,
+      bldgrp: this.state.bldgrp,
+      hospitalname: this.state.hospitalname,
+      relationtopatient: this.state.rtp,
+    };
+    console.log(data); // debug
+    await Axios.post("https://yrc-vec-api.herokuapp.com/bldreq", data)
+      .then((res) => {
+        document.getElementById("feedback").style.display = "inline";
+        console.dir(res);
+      })
+      .catch((err) => {
+        console.dir(err);
+        alert("ERROR OCCURED IN UPLOAD");
+      });
+  }
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    this.setState({
+      [name]: value,
+    });
+  }
+  render() {
+    return (
+      <Grow in={true}>
+        <div className="app">
+          <div className="spacer"></div>
+          <Link to="bldonors" className="link">
+            <Paper
+              style={{
+                margin: "1rem",
+                padding: ".5rem",
+                backgroundColor: "#e84a5f",
+                color: "#fff",
+              }}
+            >
+              <h1 style={{ textAlign: "center" }}>
+                Click here to Register Yourself as Blood Donor !
+              </h1>
+            </Paper>
+          </Link>
+          <div className="form">
+            <h2>Request for Blood</h2>
+            <TextField
+              label="Enter Your Name"
+              variant="outlined"
+              onChange={this.handleInputChange}
+              fullWidth
+              style={{ margin: 8 }}
+              name="name"
+              value={this.state.name}
+            />
+            <br></br>
+            <TextField
+              label="Enter Your Contact Number"
+              variant="outlined"
+              fullWidth
+              onChange={this.handleInputChange}
+              style={{ margin: 8 }}
+              name="contact"
+              value={this.state.contact}
+            />
+            <br></br>
+            <TextField
+              style={{ margin: 8 }}
+              fullWidth
+              onChange={this.handleInputChange}
+              label="Enter Your Email address"
+              variant="outlined"
+              name="email"
+              value={this.state.email}
+            />
+            <br></br>
+            <TextField
+              label="Enter the blood group needed"
+              fullWidth
+              onChange={this.handleInputChange}
+              style={{ margin: 8 }}
+              variant="outlined"
+              name="bldgrp"
+              value={this.state.bldgrp}
+            />
+            <br></br>
+            <TextField
+              style={{ margin: 8 }}
+              fullWidth
+              onChange={this.handleInputChange}
+              label="Enter the hospital Name with address"
+              variant="outlined"
+              name="hospitalname"
+              value={this.state.hospitalname}
+            />
+            <br></br>
+            <TextField
+              style={{ margin: 8 }}
+              fullWidth
+              onChange={this.handleInputChange}
+              label="Enter Your Relationship with patient"
+              variant="outlined"
+              name="rtp"
+              value={this.state.rtp}
+            />
+            <br></br>
+            <div
+              id="feedback"
+              style={{
+                display: "none",
+              }}
+            >
+              <Paper
+                style={{
+                  backgroundColor: "#a8df65",
+                  padding: ".5rem",
+                  margin: "1rem",
+                }}
+              >
+                Thanks for requesting ,soon you will be informed about the donor
+              </Paper>
+            </div>
+            <button onClick={this.uploadbldRq}>Submit Request</button>
+          </div>
+        </div>
+      </Grow>
+    );
+  }
+}
+
+export default Bldonation;

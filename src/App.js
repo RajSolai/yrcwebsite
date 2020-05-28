@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Home from "./screens/Home";
+import Event from "./screens/event";
+import Volunteers from "./screens/Volunteers";
+import Bldonation from "./screens/Bldonation";
+import Registration from "./screens/Registration";
+import DonorReg from "./screens/DonorReg";
+import Allevents from "./screens/Allevents";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div className="nav-bar">
+          <ul className="nav-list">
+            <li className="nav-itemp">
+              <Link to="/" className="link">
+                <p class="brand">SRM-VEC-YRC</p>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/events" className="link">
+                <span className="nav-link">Events</span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/services" className="link">
+                <span className="nav-link">Services</span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/about" className="link">
+                <span className="nav-link">About</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <Switch>
+            <Route path="/" exact component={Home}></Route>
+            <Route path="/article" exact component={Event}></Route>
+            <Route path="/vols" exact component={Volunteers}></Route>
+            <Route path="/bld" exact component={Bldonation}></Route>
+            <Route path="/newvols" exact component={Registration}></Route>
+            <Route path="/bldonors" exact component={DonorReg}></Route>
+            <Route path="/events" exact component={Allevents}></Route>
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
