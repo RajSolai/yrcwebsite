@@ -153,7 +153,8 @@ class DonorReg extends React.Component {
                   backgroundColor: "#ed1c24",
                   padding: ".5rem",
                   margin: "1rem",
-                  color:"#fff"
+                  borderRadius: "8px",
+                  color: "#fff",
                 }}
               >
                 Sorry Your Age Must be between 18 - 50

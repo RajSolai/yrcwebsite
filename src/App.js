@@ -8,6 +8,8 @@ import Bldonation from "./screens/Bldonation";
 import Registration from "./screens/Registration";
 import DonorReg from "./screens/DonorReg";
 import Allevents from "./screens/Allevents";
+import About from "./screens/About";
+import Contact from "./screens/Contact";
 
 class App extends React.Component {
   render() {
@@ -46,6 +48,8 @@ class App extends React.Component {
             <Route path="/newvols" exact component={Registration}></Route>
             <Route path="/bldonors" exact component={DonorReg}></Route>
             <Route path="/events" exact component={Allevents}></Route>
+            <Route path="/about" exact component={About}></Route>
+            <Route path="/contact" exact component={Contact}></Route>
           </Switch>
         </div>
       </Router>

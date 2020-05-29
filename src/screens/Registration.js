@@ -5,7 +5,7 @@ import {
   Paper,
   TextField,
   Container,
-  CircularProgress,
+  LinearProgress,
 } from "@material-ui/core";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
@@ -131,14 +131,17 @@ class Registration extends React.Component {
               </div>
               <br></br>
               <div id="spinner" style={{ display: "none" }}>
-                <CircularProgress></CircularProgress>
+                <LinearProgress color="secondary"></LinearProgress>
+                <p style={{ fontWeight: "600", color: "#ed1c24" }}>
+                  Uploading Image
+                </p>
               </div>
               <span
                 className="progress"
                 id="progress"
                 role="img"
                 aria-label="msg"
-                style={{ display: "none", color: "green" }}
+                style={{ display: "none", color: "green", margin: "1rem" }}
               >
                 Image Uploaded Succesfully 🤩
               </span>
@@ -177,13 +180,14 @@ class Registration extends React.Component {
                 id="feedback"
                 style={{
                   display: "none",
-                  margin: ".5rem",
                 }}
               >
                 <Paper
                   style={{
                     backgroundColor: "#a8df65",
                     padding: ".5rem",
+                    borderRadius:"8px",
+                    margin: "1rem",
                   }}
                 >
                   Thanks for Registering as a member of SRM VEC YRC !
