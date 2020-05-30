@@ -23,6 +23,12 @@ h6 {
 .app {
   padding: 0rem 8rem 0rem 8rem;
 }
+.center{
+  text-align: center;
+}
+.justify{
+  text-align: justify;
+}
 .brand {
   font-size: 1rem;
   color: #000000;
@@ -252,5 +258,8 @@ button:hover {
   }
   .spacer {
     margin: 5rem;
+  }
+  .justify{
+    text-align: center;
   }
 }

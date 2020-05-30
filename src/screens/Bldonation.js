@@ -2,6 +2,7 @@ import React from "react";
 import { Grow, TextField, Paper } from "@material-ui/core";
 import Axios from "axios";
 import { Link } from "react-router-dom";
+import MessageOverlay from "../components/MessageOverlay";
 
 class Bldonation extends React.Component {
   constructor(props) {
@@ -132,15 +133,10 @@ class Bldonation extends React.Component {
                 display: "none",
               }}
             >
-              <Paper
-                style={{
-                  backgroundColor: "#a8df65",
-                  padding: ".5rem",
-                  margin: "1rem",
-                }}
-              >
-                Thanks for requesting ,soon you will be informed about the donor
-              </Paper>
+              <MessageOverlay
+                variant="success"
+                message=" Thanks for requesting ,soon you will be informed about the donor"
+              ></MessageOverlay>
             </div>
             <button onClick={this.uploadbldRq}>Submit Request</button>
           </div>

@@ -12,7 +12,7 @@ class Volunteers extends React.Component {
     };
   }
   componentDidMount() {
-    Axios.get("http://yrc-vec-api.herokuapp.com/volunteers").then((data) => {
+    Axios.get("https://yrc-vec-api.herokuapp.com/volunteers").then((data) => {
       this.setState({ list: data.data });
     });
   }

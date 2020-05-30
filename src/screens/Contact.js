@@ -19,13 +19,13 @@ class Contact extends React.Component {
           name: "Mr. G.Anand",
           position: "SRM VEC YRC Coordinator / Mech AP",
           phoneno: "9443984385",
-          mailid: "",
+          mailid: "gananth72@gmail.com",
         },
         {
           name: "Mr. G.Vivekanandan",
           position: "SRM VEC YRC Co Coordinator / IT AP",
           phoneno: "9092756150",
-          mailid: "",
+          mailid: "vivekmailtome@gmail.com",
         },
         {
           name: "Mr. P.Saravanaperumal",
@@ -37,13 +37,19 @@ class Contact extends React.Component {
           name: "Mr. Brian Domnic",
           position: "SRM VEC YRC Senior Event Manager",
           phoneno: "7305261307",
-          mailid: "saravanaperumal2000@gmail.com",
+          mailid: "briandominic.awesome@gmail.com",
         },
         {
           name: "Mr. Devanathan",
           position: "SRM VEC YRC Senior Event Manager",
           phoneno: "7550277281",
-          mailid: "saravanaperumal2000@gmail.com",
+          mailid: "devanathan486@gmail.com",
+        },
+        {
+          name: "Mr. Boopathiraaja",
+          position: "SRM VEC YRC Senior Event Manager",
+          phoneno: "9751012783",
+          mailid: "boopathiraaja812@gmail.com",
         },
       ],
     };

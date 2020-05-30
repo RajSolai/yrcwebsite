@@ -2,13 +2,13 @@ import React from "react";
 import Axios from "axios";
 import {
   Grow,
-  Paper,
   TextField,
   Container,
   LinearProgress,
 } from "@material-ui/core";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
+import MessageOverlay from "../components/MessageOverlay";
 
 class Registration extends React.Component {
   constructor(props) {
@@ -117,7 +117,7 @@ class Registration extends React.Component {
                     cursor: "pointer",
                   }}
                 >
-                  Select your Display Picture
+                  Select your DP
                   <FileUploader
                     hidden
                     accept="image/*"
@@ -143,7 +143,7 @@ class Registration extends React.Component {
                 aria-label="msg"
                 style={{ display: "none", color: "green", margin: "1rem" }}
               >
-                Image Uploaded Succesfully 🤩
+              DP Uploaded Succesfully 🤩
               </span>
               <br></br>
               <TextField
@@ -182,16 +182,10 @@ class Registration extends React.Component {
                   display: "none",
                 }}
               >
-                <Paper
-                  style={{
-                    backgroundColor: "#a8df65",
-                    padding: ".5rem",
-                    borderRadius:"8px",
-                    margin: "1rem",
-                  }}
-                >
-                  Thanks for Registering as a member of SRM VEC YRC !
-                </Paper>
+                <MessageOverlay
+                  variant="success"
+                  message="Thank you for Registering !"
+                ></MessageOverlay>
               </div>
               <button onClick={this.postEvent}>Register</button>
             </div>

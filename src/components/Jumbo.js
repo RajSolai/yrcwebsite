@@ -39,7 +39,7 @@ class Jumbo extends React.Component {
                     onMouseLeave={this.animateText2}
                     value="Contact Us"
                   >
-                    Contact us
+                    Contact Us
                   </button>
                 </Link>
                 <Link to="/bld">

@@ -1,6 +1,7 @@
 import React from "react";
 import Axios from "axios";
-import { Grow, Paper, TextField } from "@material-ui/core";
+import { Grow, TextField } from "@material-ui/core";
+import MessageOverlay from "../components/MessageOverlay";
 
 class DonorReg extends React.Component {
   constructor(props) {
@@ -132,15 +133,10 @@ class DonorReg extends React.Component {
                 display: "none",
               }}
             >
-              <Paper
-                style={{
-                  backgroundColor: "#a8df65",
-                  padding: ".5rem",
-                  margin: "1rem",
-                }}
-              >
-                Thanks for Registering as a donor!
-              </Paper>
+              <MessageOverlay
+                variant="success"
+                message="Thanks for Registering as a donor!"
+              ></MessageOverlay>
             </div>
             <div
               id="ageError"
@@ -148,17 +144,10 @@ class DonorReg extends React.Component {
                 display: "none",
               }}
             >
-              <Paper
-                style={{
-                  backgroundColor: "#ed1c24",
-                  padding: ".5rem",
-                  margin: "1rem",
-                  borderRadius: "8px",
-                  color: "#fff",
-                }}
-              >
-                Sorry Your Age Must be between 18 - 50
-              </Paper>
+              <MessageOverlay
+                variant="error"
+                message="Age must be between 18 to 49"
+              ></MessageOverlay>
             </div>
             <button onClick={this.postEvent}>Submit Request</button>
           </div>
