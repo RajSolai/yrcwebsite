@@ -1,11 +1,6 @@
 import React from "react";
 import Axios from "axios";
-import {
-  Grow,
-  TextField,
-  Container,
-  LinearProgress,
-} from "@material-ui/core";
+import { Grow, TextField, Container, LinearProgress } from "@material-ui/core";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
 import MessageOverlay from "../components/MessageOverlay";
@@ -81,8 +76,8 @@ class Registration extends React.Component {
         console.dir(res);
       })
       .catch((err) => {
+        document.getElementById("error").style.display = "inline";
         console.dir(err);
-        alert("ERROR OCCURED IN UPLOAD");
       });
   }
   render() {
@@ -143,7 +138,7 @@ class Registration extends React.Component {
                 aria-label="msg"
                 style={{ display: "none", color: "green", margin: "1rem" }}
               >
-              DP Uploaded Succesfully 🤩
+                DP Uploaded Succesfully 🤩
               </span>
               <br></br>
               <TextField
@@ -185,6 +180,17 @@ class Registration extends React.Component {
                 <MessageOverlay
                   variant="success"
                   message="Thank you for Registering !"
+                ></MessageOverlay>
+              </div>
+              <div
+                id="error"
+                style={{
+                  display: "none",
+                }}
+              >
+                <MessageOverlay
+                  variant="error"
+                  message="Error Occured in Registration, Try again after some time"
                 ></MessageOverlay>
               </div>
               <button onClick={this.postEvent}>Register</button>
