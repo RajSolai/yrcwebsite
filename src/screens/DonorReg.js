@@ -149,7 +149,7 @@ class DonorReg extends React.Component {
                 message="Age must be between 18 to 49"
               ></MessageOverlay>
             </div>
-            <button onClick={this.postEvent}>Submit Request</button>
+            <button onClick={this.postEvent}>Register</button>
           </div>
         </div>
       </Grow>

@@ -107,6 +107,9 @@ class Bldonation extends React.Component {
               value={this.state.bldgrp}
             />
             <br></br>
+            <h3>
+              <em>Only Govt,. Hospitals are Allowed due to Restrictions</em>
+            </h3>
             <TextField
               style={{ margin: 8 }}
               fullWidth
