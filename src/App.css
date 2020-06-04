@@ -23,10 +23,10 @@ h6 {
 .app {
   padding: 0rem 8rem 0rem 8rem;
 }
-.center{
+.center {
   text-align: center;
 }
-.justify{
+.justify {
   text-align: justify;
 }
 .brand {
@@ -227,6 +227,9 @@ button:hover {
   background-color: #e84a5f;
   color: #fff;
 }
+.about-para {
+  line-height-step: 1;
+}
 
 @media only screen and (max-width: 600px) {
   .app {
@@ -259,7 +262,7 @@ button:hover {
   .spacer {
     margin: 5rem;
   }
-  .justify{
+  .justify {
     text-align: center;
   }
 }

@@ -27,7 +27,6 @@ class Bldonation extends React.Component {
       hospitalname: this.state.hospitalname,
       relationtopatient: this.state.rtp,
     };
-    console.log(data); // debug
     await Axios.post("https://yrc-vec-api.herokuapp.com/bldreq", data)
       .then((res) => {
         document.getElementById("feedback").style.display = "inline";
@@ -107,9 +106,9 @@ class Bldonation extends React.Component {
               value={this.state.bldgrp}
             />
             <br></br>
-            <h3>
+            <h6>
               <em>Only Govt,. Hospitals are Allowed due to Restrictions</em>
-            </h3>
+            </h6>
             <TextField
               style={{ margin: 8 }}
               fullWidth

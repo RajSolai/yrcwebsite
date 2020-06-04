@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  Grow,
-  Paper,
-  Divider,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from "@material-ui/core";
-import { PhoneRounded, MailRounded } from "@material-ui/icons";
+import { Grow } from "@material-ui/core";
+import ContactCard from "../components/ContactCard";
 
 class Contact extends React.Component {
   constructor(props) {
@@ -34,10 +26,10 @@ class Contact extends React.Component {
           mailid: "saravanaperumal2000@gmail.com",
         },
         {
-          name: "Mr. Brian Domnic",
+          name: "Mr. Brian Dominic",
           position: "SRM VEC YRC Senior Event Manager",
           phoneno: "7305261307",
-          mailid: "briandominic.awesome@gmail.com",
+          mailid: "briandominicd2021.eee@srmvalliammai.ac.in",
         },
         {
           name: "Mr. Devanathan",
@@ -61,29 +53,12 @@ class Contact extends React.Component {
         <div className="app">
           <div className="spacer"></div>
           {this.state.contacts.map((data) => (
-            <Paper
-              style={{ padding: "1rem", margin: "1rem", borderRadius: "8px" }}
-              elevation={5}
-            >
-              <h2>{data.name}</h2>
-              <Divider></Divider>
-              <p>{data.position}</p>
-              <Divider></Divider>
-              <List>
-                <ListItem>
-                  <ListItemIcon>
-                    <PhoneRounded />
-                  </ListItemIcon>
-                  <ListItemText>{data.phoneno}</ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <MailRounded />
-                  </ListItemIcon>
-                  <ListItemText>{data.mailid}</ListItemText>
-                </ListItem>
-              </List>
-            </Paper>
+            <ContactCard
+              name={data.name}
+              position={data.position}
+              phoneno={data.phoneno}
+              mailid={data.mailid}
+            ></ContactCard>
           ))}
         </div>
       </Grow>

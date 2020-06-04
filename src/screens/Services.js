@@ -7,7 +7,7 @@ class Services extends React.Component {
       <Grow in={true}>
         <div className="app justify">
           <div className="spacer"></div>
-          <h2>Servies of SRM VEC YRC</h2>
+          <h1>Servies of SRM VEC YRC</h1>
           <List>
             <h4>
               The activities of Indian Red Cross society are grouped into four
