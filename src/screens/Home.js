@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "../theme/App.scss";
 import Axios from "axios";
 import thumb from "../assets/thumb.png";
 import RecentCard from "../components/Recentcard";
