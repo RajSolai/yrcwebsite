@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "@material-ui/core";
+import "./../theme/components.scss";
 
 class Jumbo extends React.Component {
   animateText(event) {

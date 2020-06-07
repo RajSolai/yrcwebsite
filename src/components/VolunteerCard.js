@@ -1,6 +1,6 @@
 import React from "react";
 import { Grow, Paper, List, ListItem, ListItemText } from "@material-ui/core";
-import "./components.css";
+import "./../theme/components.scss";
 
 class VolunteerCard extends React.Component {
   render() {

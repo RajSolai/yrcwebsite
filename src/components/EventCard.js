@@ -1,5 +1,5 @@
 import React from "react";
-import "./components.css";
+import "./../theme/components.scss";
 import { Grow } from "@material-ui/core";
 
 class EventCard extends React.Component {

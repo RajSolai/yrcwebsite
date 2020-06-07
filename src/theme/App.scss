@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 :root {
   font-size: $font-size;
@@ -60,8 +61,8 @@ h6 {
   top: 0;
   text-align: center;
   width: 100%;
-  color: white;
-  background-color: rgb(255, 255, 255);
+  color: $primary-white;
+  background-color: $primary-white-transperant;
 }
 .nav-list {
   padding-left: 1rem;
@@ -73,15 +74,16 @@ h6 {
 }
 .nav-link {
   display: block;
-  color: #000000;
+  color: $primary-black;
   text-decoration: none;
   font-weight: 500;
   a {
-    color: #000000;
+    color: $primary-black;
     text-decoration: none;
     font-size: 12px;
   }
 }
+Link,
 .link {
   text-decoration: none;
   outline: none;
@@ -89,6 +91,10 @@ h6 {
     text-decoration: none;
     border: none;
     outline: none;
+  }
+  &:focus {
+    text-decoration: none;
+    border: none;
   }
 }
 .img-box {
@@ -99,45 +105,25 @@ h6 {
   align-items: center;
   justify-content: center;
 }
-.link:focus {
-  text-decoration: none;
-  border: none;
-}
+
 .nav-item {
   border-radius: 8px;
   padding: 0.5rem;
   text-decoration: none;
   margin: 0 0 0 1rem;
   &:hover {
-    background-color: #e84a5f;
-    color: #fff;
+    background-color: $primary;
+    color: $primary-white;
     transition: ease-in 200ms;
     .nav-link {
-      color: #ffffff;
+      color: $primary-white;
     }
   }
   &:active {
     font-weight: bold;
   }
 }
-.jumbotron {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 4.5rem;
-  img {
-    padding-right: 1rem;
-    padding-left: 0rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  div {
-    h1 {
-      font-weight: 900;
-    }
-  }
-}
+
 .jumbo-img {
   padding: 1rem;
   margin: 1rem;
@@ -149,89 +135,52 @@ h6 {
   align-content: stretch;
   text-decoration: none;
 }
-.jumbo-box {
-  display: flex;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
-  flex-direction: row;
-  justify-content: center;
-  padding: 1rem;
-}
-.red {
-  background-color: #ed1c24;
-  color: #ffffff;
-}
-.blue {
-  background-color: #2fc4b2;
-  color: #fff;
-}
-.green {
-  background-color: #a8df65;
-  color: #000000;
-}
-.purple {
-  background-color: #5c2a9d;
-  color: #fff;
-}
 
 /* for card */
 
 .envelope {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+  @include grid();
 }
 .card {
   margin: 1rem;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-}
-.card-content {
-  padding: 1rem;
-  text-overflow: clip;
-  overflow: fade(10px);
-}
-.card-img {
-  border-radius: 8px 8px 0px 0px;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-.card-title {
-  font-weight: 600;
-}
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ed1c23;
-}
-.story {
-  overflow: fade(10px);
-}
-.card-ctrl {
-  margin: 0;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  @include card($primary-white);
+  .card-content {
+    padding: 1rem;
+    text-overflow: clip;
+    overflow: fade(10px);
+  }
+  .card-img {
+    border-radius: 8px 8px 0px 0px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .card-title {
+    font-weight: 600;
+  }
+  .card-img {
+    margin: 0;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 button {
   padding: 0.5rem;
-  background-color: #fff;
-  color: #000000;
+  background-color: $primary-white;
+  color: $primary-black;
   border-radius: 8px;
   font-family: "Montserrat", sans-serif;
-  border: 2px #e84a5f solid;
+  border: 2px $primary solid;
   transition: ease-in 200ms;
   &:hover {
-    background-color: #e84a5f;
-    color: #fff;
+    background-color: $primary;
+    color: $primary-white;
   }
 }
-
 .about-para {
   line-height-step: 1;
 }
@@ -241,15 +190,11 @@ button {
     margin: 0;
     padding: 0;
   }
-  .jumbotron {
-    flex-direction: column;
-  }
   .no-m-p {
     flex-direction: column;
   }
   .envelope {
-    display: flex;
-    flex-direction: column;
+    @include flex(column, center);
   }
   .brand {
     padding: 0;

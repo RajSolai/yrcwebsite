@@ -29,42 +29,6 @@ class Home extends React.Component {
       <>
         <div className="app">
           <div className="spacer"></div>
-          {/* <div className="jumbotron red">
-            <div className="img-box">
-              <img
-                src={veclogo}
-                height="150"
-                width="150"
-                alt=""
-                className="jumbo-img"
-              />
-              <img src={cross} height="150" width="150" alt="" />
-            </div>
-            <div className="title-box">
-              <h1>SRM VEC YRC</h1>
-              <p>
-                Youth Red Cross club of<br></br> SRM Valliammi Enginnering
-                College
-              </p>
-            </div>
-          </div>
-          <div className="jumbotron no-m-p">
-            <Link to="" className="link">
-              <div className="jumbo-box green">
-                <h2>Contact us</h2>
-              </div>
-            </Link>
-            <Link className="link" to="bld">
-              <div className="jumbo-box red">
-                <h2>Blood Donation</h2>
-              </div>
-            </Link>
-            <Link className="link" to="vols">
-              <div className="jumbo-box purple">
-                <h2>Volunteers</h2>
-              </div>
-            </Link>
-          </div> */}
           <Jumbo image={thumb}></Jumbo>
           <main>
             <h3 style={{ marginLeft: "1rem" }}>Recent Posts</h3>
