@@ -32,13 +32,13 @@ class Contact extends React.Component {
           mailid: "briandominicd2021.eee@srmvalliammai.ac.in",
         },
         {
-          name: "Mr. Devanathan",
+          name: "Mr. S.Devanathan",
           position: "SRM VEC YRC Senior Event Manager",
           phoneno: "7550277281",
           mailid: "devanathan486@gmail.com",
         },
         {
-          name: "Mr. Boopathiraaja",
+          name: "Mr. U.S.Boopathiraaja",
           position: "SRM VEC YRC Senior Event Manager",
           phoneno: "9751012783",
           mailid: "boopathiraaja812@gmail.com",

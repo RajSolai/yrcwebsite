@@ -27,13 +27,15 @@
   box-shadow: $primary-shadow;
   .jumbo-btn {
     margin: 0.2rem;
-    background-color: $primary;
-    border: none;
-    color: $primary-white;
+    background-color: $primary-white;
+    border: 1px solid $primary-white;
+    color: $primary-black;
     font-weight: 600;
+    transition: ease-in-out 500ms;
     &:hover {
-      background-color: $primary-white;
-      color: $primary-black;
+      border: 2px solid $primary-white;
+      background-color: $primary;
+      color: $primary-white;
     }
   }
   .jumbo-btnbar {
@@ -41,7 +43,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .mb {
     flex-direction: column;
   }

@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "animations";
 
 :root {
   font-size: $font-size;
@@ -135,7 +136,9 @@ Link,
   align-content: stretch;
   text-decoration: none;
 }
-
+.animated-notice {
+  @include colorchange();
+}
 /* for card */
 
 .envelope {
@@ -185,7 +188,7 @@ button {
   line-height-step: 1;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .app {
     margin: 0;
     padding: 0;

@@ -52,6 +52,7 @@ class Bldonation extends React.Component {
           <div className="spacer"></div>
           <Link to="bldonors" className="link">
             <Paper
+              className="animated-notice"
               style={{
                 margin: "1rem",
                 padding: ".5rem",

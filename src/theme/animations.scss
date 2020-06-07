@@ -1,0 +1,25 @@
+@import "variables";
+
+/* keyframes */
+@keyframes colorChangeKeyframes {
+  0% {
+    background-color: $primary;
+  }
+  25% {
+    background-color: $primary-blue;
+  }
+  50% {
+    background-color: $primary-darkblue;
+  }
+  75% {
+    background-color: $primary-yellow;
+  }
+  100% {
+    background-color: $primary;
+  }
+}
+
+/* animations */
+@mixin colorchange {
+  animation: 8s ease-in-out infinite colorChangeKeyframes;
+}

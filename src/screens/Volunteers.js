@@ -23,6 +23,7 @@ class Volunteers extends React.Component {
           <div className="spacer"></div>
           <Link to="newvols" className="link">
             <Paper
+              className="animated-notice"
               style={{
                 margin: "1rem",
                 padding: ".5rem",
