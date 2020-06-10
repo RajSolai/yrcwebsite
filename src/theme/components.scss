@@ -45,6 +45,9 @@
 .fb {
   @include flex(row, center);
 }
+.fb-c {
+  @include flex(column, center);
+}
 .mb {
   @include flex(row, center);
   justify-content: center;

@@ -56,9 +56,11 @@ h6 {
     margin-top: $temp;
   }
 }
+
 .skeletal-box {
   @include flex(row, center);
   align-content: center;
+  align-self: center;
   margin-left: auto;
   margin-top: auto;
   margin-right: auto;
@@ -253,6 +255,9 @@ button {
     padding: 0;
     margin: 0;
     text-overflow: clip;
+  }
+  .vol-cont {
+    @include flex(column, center);
   }
   .jumbo-img {
     margin: 0;

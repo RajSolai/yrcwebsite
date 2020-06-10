@@ -1,5 +1,6 @@
 import React from "react";
 import { Grow, Paper } from "@material-ui/core";
+import usericon from "../assets/usericon.png";
 import "./../theme/components.scss";
 
 class VolunteerCard extends React.Component {
@@ -15,7 +16,11 @@ class VolunteerCard extends React.Component {
             <div className="fb">
               <img
                 alt={this.props.name}
-                src={this.props.imgsrc}
+                src={
+                  this.props.imgsrc === "" || null
+                    ? usericon
+                    : this.props.imgsrc
+                }
                 height="250"
                 width="200"
               ></img>

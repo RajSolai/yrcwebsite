@@ -1,20 +1,22 @@
 import React from "react";
 import Axios from "axios";
 import VolunteerCard from "../components/VolunteerCard";
-import { Paper, Backdrop, CircularProgress, Grow } from "@material-ui/core";
+import { Paper, CircularProgress, Grow } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Footer from "../components/footer";
+import "../theme/components.scss";
 
 class Volunteers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       list: [],
+      isloading: true,
     };
   }
   componentDidMount() {
     Axios.get("https://yrc-vec-api.herokuapp.com/volunteers").then((data) => {
-      this.setState({ list: data.data });
+      this.setState({ list: data.data, isloading: false });
     });
   }
   render() {
@@ -38,11 +40,12 @@ class Volunteers extends React.Component {
                 </h1>
               </Paper>
             </Link>
-            <div>
-              {this.state.list === null ? (
-                <Backdrop>
-                  <CircularProgress color="inherit" />
-                </Backdrop>
+            <main className="vol-cont">
+              {this.state.isloading === true ? (
+                <div className="skeletal-box">
+                  <CircularProgress color="secondary"></CircularProgress>
+                  <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
+                </div>
               ) : (
                 this.state.list.map((data) => (
                   <div>
@@ -55,7 +58,7 @@ class Volunteers extends React.Component {
                   </div>
                 ))
               )}
-            </div>
+            </main>
           </div>
         </Grow>
         <Footer></Footer>

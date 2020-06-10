@@ -89,11 +89,9 @@ class Registration extends React.Component {
     await Axios.post("https://yrc-vec-api.herokuapp.com/volunteers", data)
       .then((res) => {
         document.getElementById("feedback").style.display = "inline";
-        console.dir(res);
       })
       .catch((err) => {
         document.getElementById("error").style.display = "inline";
-        console.dir(err);
       });
   }
   hideImage(event) {
@@ -160,6 +158,9 @@ class Registration extends React.Component {
                 </div>
                 <div>
                   <FormControlLabel
+                    style={{
+                      zIndex: "0",
+                    }}
                     control={
                       <Switch
                         checked={this.state.privacychecked}
@@ -167,7 +168,7 @@ class Registration extends React.Component {
                         name="privateimage"
                       />
                     }
-                    label="Keep Image Private"
+                    label="Hide DP in Public"
                   />
                 </div>
                 <span
