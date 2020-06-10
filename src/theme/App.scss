@@ -10,8 +10,12 @@ html {
   padding: 0;
 }
 body {
+  text-rendering: optimizeSpeed;
   margin: 0;
   padding: 0;
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+  }
 }
 h1 {
   margin: 0.5rem;
@@ -35,7 +39,7 @@ h6 {
 }
 .brand {
   font-size: 1rem;
-  color: #000000;
+  color: $primary-white;
   font-family: "Montserrat", sans-serif;
   margin-left: 2rem;
   font-weight: 900;
@@ -46,8 +50,19 @@ h6 {
   flex-direction: row;
   justify-content: center;
 }
-.spacer {
-  margin-top: 6.6rem;
+@for $size from 6 to 8 {
+  .spacer-#{$size} {
+    $temp: unquote($size + "rem");
+    margin-top: $temp;
+  }
+}
+.skeletal-box {
+  @include flex(row, center);
+  align-content: center;
+  margin-left: auto;
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: 15rem;
 }
 .form {
   text-align: center;
@@ -63,7 +78,12 @@ h6 {
   text-align: center;
   width: 100%;
   color: $primary-white;
-  background-color: $primary-white-transperant;
+  background-color: $primary;
+  border-radius: 0px 0px 20px 10px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
 }
 .nav-list {
   padding-left: 1rem;
@@ -75,11 +95,11 @@ h6 {
 }
 .nav-link {
   display: block;
-  color: $primary-black;
+  color: $primary-white;
   text-decoration: none;
   font-weight: 500;
   a {
-    color: $primary-black;
+    color: $primary-white;
     text-decoration: none;
     font-size: 12px;
   }
@@ -113,11 +133,11 @@ Link,
   text-decoration: none;
   margin: 0 0 0 1rem;
   &:hover {
-    background-color: $primary;
-    color: $primary-white;
+    background-color: $primary-white;
+    color: $primary-black;
     transition: ease-in 200ms;
     .nav-link {
-      color: $primary-white;
+      color: $primary-black;
     }
   }
   &:active {
@@ -162,14 +182,6 @@ Link,
   .card-title {
     font-weight: 600;
   }
-  .card-img {
-    margin: 0;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
 }
 button {
   padding: 0.5rem;
@@ -186,6 +198,44 @@ button {
 }
 .about-para {
   line-height-step: 1;
+  padding: 1rem;
+}
+.left-para {
+  position: absolute;
+  left: -200px;
+}
+.right-para {
+  text-align: right;
+  position: absolute;
+  right: -200px;
+}
+@for $delay from 1 to 3 {
+  .slide-in-l-#{$delay} {
+    $temp: unquote($delay + "s");
+    @include slidein($temp, "left");
+  }
+}
+@for $delay from 1 to 3 {
+  .slide-in-r-#{$delay} {
+    $temp: unquote($delay + "s");
+    @include slidein($temp, "right");
+  }
+}
+.footer {
+  @include flex(column, center);
+  width: 100%;
+  margin-top: 3rem;
+  background-color: $primary;
+  color: $primary-white;
+  border-radius: 20px 20px 0px 0px;
+  text-align: center;
+  .footer-title {
+    align-self: center;
+  }
+  .footer-content {
+    padding: 1rem;
+    align-self: center;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -210,12 +260,15 @@ button {
     padding: 0;
   }
   .nav-item {
-    margin: 0;
+    margin: 0.2rem;
   }
   .spacer {
     margin: 5rem;
   }
-  .justify {
-    text-align: center;
+}
+
+@media all and (display-mode: standalone) {
+  body {
+    text-rendering: optimizeLegibility;
   }
 }

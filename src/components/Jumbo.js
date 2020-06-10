@@ -23,14 +23,17 @@ class Jumbo extends React.Component {
           <div className="jumbo">
             <div>
               <h2
+                className="jumbo-title"
                 style={{
                   fontFamily: "Montserrat , sans-serif",
                   fontWeight: "900",
                 }}
               >
-                SRM VEC YRC
+                SRM-VEC YRC
               </h2>
-              <p>YRC Club of SRM Valliammi Engineering College</p>
+              <p className="jumbo-content">
+                YRC Club of SRM Valliammi Engineering College
+              </p>
               <div className="jumbo-btnbar">
                 <Link to="/contact">
                   <button
@@ -60,9 +63,9 @@ class Jumbo extends React.Component {
                     id="vol-btn"
                     onMouseOver={this.animateText}
                     onMouseLeave={this.animateText2}
-                    value="Volunteers"
+                    value="YRC Volunteers"
                   >
-                    Volunteers
+                    YRC Volunteers
                   </button>
                 </Link>
               </div>

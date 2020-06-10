@@ -1,6 +1,7 @@
 import React from "react";
 import { Grow } from "@material-ui/core";
 import ContactCard from "../components/ContactCard";
+import Footer from "../components/footer";
 
 class Contact extends React.Component {
   constructor(props) {
@@ -49,19 +50,26 @@ class Contact extends React.Component {
 
   render() {
     return (
+      <>
       <Grow in={true}>
         <div className="app">
-          <div className="spacer"></div>
-          {this.state.contacts.map((data) => (
-            <ContactCard
-              name={data.name}
-              position={data.position}
-              phoneno={data.phoneno}
-              mailid={data.mailid}
-            ></ContactCard>
-          ))}
+          <div className="spacer-6"></div>
+          <div>
+            {this.state.contacts.map((data) => (
+              <div>
+                <ContactCard
+                  name={data.name}
+                  position={data.position}
+                  phoneno={data.phoneno}
+                  mailid={data.mailid}
+                ></ContactCard>
+              </div>
+            ))}
+          </div>
         </div>
       </Grow>
+      <Footer></Footer>
+      </>
     );
   }
 }

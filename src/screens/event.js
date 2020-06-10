@@ -29,7 +29,7 @@ class Event extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="spacer"></div>
+        <div className="spacer-6"></div>
         <h1>{this.state.title}</h1>
         <div className="article">
           <img src={this.state.imgurl} height="500" width="600" alt={this.state.tag} />

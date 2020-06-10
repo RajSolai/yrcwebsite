@@ -1,5 +1,5 @@
 import React from "react";
-import { Grow, Paper, List, ListItem, ListItemText } from "@material-ui/core";
+import { Grow, Paper } from "@material-ui/core";
 import "./../theme/components.scss";
 
 class VolunteerCard extends React.Component {
@@ -19,17 +19,25 @@ class VolunteerCard extends React.Component {
                 height="250"
                 width="200"
               ></img>
-              <List>
-                <ListItem>
-                  <ListItemText>{this.props.name}</ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText>{this.props.year}</ListItemText>
-                </ListItem>
-                <ListItem>
-                  <ListItemText>{this.props.dept}</ListItemText>
-                </ListItem>
-              </List>
+              <ul className="list-no-style">
+                <li>
+                  <p>
+                    <strong>NAME : </strong> {this.props.name}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>YEAR : </strong>
+                    {this.props.year}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>DEPT : </strong>
+                    {this.props.dept}
+                  </p>
+                </li>
+              </ul>
             </div>
           </Paper>
         </div>

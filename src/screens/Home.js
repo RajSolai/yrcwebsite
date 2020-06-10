@@ -5,18 +5,21 @@ import thumb from "../assets/thumb.png";
 import RecentCard from "../components/Recentcard";
 import noimg from "../assets/noimg.jpeg";
 import Jumbo from "../components/Jumbo";
+import { CircularProgress } from "@material-ui/core";
+import Footer from "../components/footer";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       recentEvent: [],
+      isloading: true,
     };
     this.openPost = this.openPost.bind(this);
   }
   componentDidMount() {
     Axios.get("https://yrc-vec-api.herokuapp.com/recents").then((res) => {
-      this.setState({ recentEvent: res.data });
+      this.setState({ recentEvent: res.data, isloading: false });
     });
   }
   openPost(datas) {
@@ -28,13 +31,16 @@ class Home extends React.Component {
     return (
       <>
         <div className="app">
-          <div className="spacer"></div>
+          <div className="spacer-6"></div>
           <Jumbo image={thumb}></Jumbo>
           <main>
             <h3 style={{ marginLeft: "1rem" }}>Recent Posts</h3>
             <div className="envelope" id="envelope">
-              {this.state.recentEvent === [] ? (
-                <h2 className="card-title">loading</h2>
+              {this.state.isloading === true ? (
+                <div className="skeletal-box">
+                  <CircularProgress color="secondary"></CircularProgress>
+                  <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
+                </div>
               ) : (
                 this.state.recentEvent.map((data) => (
                   <RecentCard
@@ -49,6 +55,7 @@ class Home extends React.Component {
             </div>
           </main>
         </div>
+        <Footer></Footer>
       </>
     );
   }

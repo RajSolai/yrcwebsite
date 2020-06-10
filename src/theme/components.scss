@@ -1,6 +1,47 @@
 @import "mixins";
 @import "variables";
 
+.footer {
+  margin-top: 15rem;
+  background-color: #e5e5e5;
+  color: $primary-black;
+  @include flex(column, center);
+  .contactbox {
+    @include flex(row, center);
+    .yrc-contact {
+      @include flex(row, center);
+      align-self: flex-start;
+    }
+    .vec-contact {
+      @include flex(row, center);
+      align-self: flex-end;
+    }
+  }
+  .socialicons {
+    @include flex(row, center);
+    align-items: center;
+  }
+  .link-box {
+    @include flex(row, center);
+  }
+}
+@for $val from 1 to 10 {
+  .padding-#{$val} {
+    $temp: unquote($val + "rem");
+    padding: $temp;
+  }
+}
+@for $val from 1 to 10 {
+  .margin-#{$val} {
+    $temp: unquote($val + "rem");
+    margin: $temp;
+  }
+  .margin-rl-#{$val} {
+    $temp: unquote($val + "rem");
+    margin-right: $temp;
+    margin-left: $temp;
+  }
+}
 .fb {
   @include flex(row, center);
 }
@@ -10,6 +51,13 @@
   align-content: center;
   padding: 0.5rem;
 }
+.hyper-link {
+  text-decoration: none;
+  color: $primary;
+  &::after {
+    color: $primary-black;
+  }
+}
 .imgs {
   padding: 0;
   margin: 0;
@@ -17,26 +65,33 @@
   width: 100%;
 }
 .jumbo {
-  background-color: $primary;
+  background-color: $primary-bg;
   @include flex(row, center);
   justify-content: space-evenly;
   align-content: center;
   padding: 1rem;
   border-radius: 8px;
-  color: $primary-white;
-  box-shadow: $primary-shadow;
+  color: $primary-black;
+  box-shadow: $secondary-shadow-dark;
   .jumbo-btn {
     margin: 0.2rem;
-    background-color: $primary-white;
-    border: 1px solid $primary-white;
-    color: $primary-black;
+    background-color: $primary;
+    border: 1px solid $primary;
+    color: $primary-white;
+    box-shadow: $primary-shadow-jumbo;
     font-weight: 600;
     transition: ease-in-out 500ms;
     &:hover {
-      border: 2px solid $primary-white;
-      background-color: $primary;
-      color: $primary-white;
+      border: 2px solid $primary;
+      background-color: $primary-white;
+      color: $primary-black;
     }
+  }
+  .jumbo-title {
+    text-shadow: $primary-shadow-jumbo;
+  }
+  .jumbo-content {
+    text-shadow: $primary-shadow-jumbo;
   }
   .jumbo-btnbar {
     @include flex(row, center);
@@ -54,6 +109,13 @@
     flex-direction: column-reverse;
     justify-content: center;
   }
+  .list-no-style {
+    list-style: none;
+  }
+  .paper {
+    @include flex(column, none);
+    box-shadow: $primary-shadow;
+  }
   .img-holder {
     padding: 0;
     margin: 0;
@@ -64,5 +126,15 @@
     margin: 0;
     height: auto;
     width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .footer {
+    display: none;
+  }
+}
+@media all and (display-mode: standalone) {
+  .footer {
+    display: none;
   }
 }
