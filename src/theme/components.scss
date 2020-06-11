@@ -113,7 +113,10 @@
     justify-content: center;
   }
   .list-no-style {
+    margin: 0;
+    padding: 1rem;
     list-style: none;
+    text-align: center;
   }
   .paper {
     @include flex(column, none);

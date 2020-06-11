@@ -32,7 +32,7 @@ class Jumbo extends React.Component {
                 SRM-VEC YRC
               </h2>
               <p className="jumbo-content">
-                YRC Club of SRM Valliammi Engineering College
+                YRC Club of SRM <wbr/> Valliammi <wbr/> Engineering College
               </p>
               <div className="jumbo-btnbar">
                 <Link to="/contact">

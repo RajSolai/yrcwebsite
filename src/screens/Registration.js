@@ -96,7 +96,7 @@ class Registration extends React.Component {
   }
   hideImage(event) {
     if (event.target.checked) {
-      this.setState({ privacychecked: true, avatarurl: null });
+      this.setState({ privacychecked: true, avatarurl: "" });
     } else {
       this.setState({
         privacychecked: false,
