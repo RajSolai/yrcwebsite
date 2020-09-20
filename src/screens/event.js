@@ -1,4 +1,7 @@
 import React from "react";
+import Axios from "axios";
+import { CircularProgress } from "@material-ui/core";
+import ReactMarkdown from "react-markdown";
 
 class Event extends React.Component {
   constructor(props) {
@@ -10,33 +13,59 @@ class Event extends React.Component {
       tag: "",
       desc: "",
       story: "",
+      isloading: true,
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
   }
-  componentDidMount() {
-    let temp = localStorage.getItem("tempxx");
-    let jsondata = JSON.parse(temp);
-    console.log(jsondata);
-    this.setState({
-      date: jsondata.uplaoddate,
-      title: jsondata.title,
-      imgurl: jsondata.imgurl,
-      tag : jsondata.imgtag,
-      decs: jsondata.desc,
-      story: jsondata.story,
-    });
+  componentWillMount() {
+    console.log("hello");
+    this.getData();
+  }
+  getData() {
+    let articleid = this.props.match.params.id;
+    Axios.get("http://yrc-vec-api.herokuapp.com/event/" + articleid).then(
+      (res) => {
+        console.log(res);
+        this.setState({
+          date: res.data.uploaddate,
+          title: res.data.title,
+          imgurl: res.data.imgurl,
+          tag: res.data.imgtag,
+          story: res.data.story,
+          desc: res.data.desc,
+          isloading: false,
+        });
+      }
+    );
   }
   render() {
-    return (
-      <div className="app">
-        <div className="spacer-6"></div>
-        <h1>{this.state.title}</h1>
-        <div className="article">
-          <img src={this.state.imgurl} height="500" width="600" alt={this.state.tag} />
-          <p style={{padding:"2rem"}}>{this.state.story}</p>
+    if (this.state.isloading) {
+      return (
+        <div className="app">
+          <div className="spacer-6">
+            <CircularProgress color="secondary"></CircularProgress>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="app">
+          <div className="spacer-6"></div>
+          <h1>{this.state.title}</h1>
+          <h4>{this.state.date}</h4>
+          <div className="article">
+            <img
+              src={this.state.imgurl}
+              height="500"
+              width="600"
+              alt={this.state.tag}
+            />
+            <p style={{ padding: "1rem" }}>
+              <ReactMarkdown source={this.state.story} escapeHtml={false} />
+            </p>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

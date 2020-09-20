@@ -20,7 +20,7 @@ class App extends React.Component {
           <ul className="nav-list">
             <li className="nav-itemp">
               <Link to="/" className="link">
-                <p class="brand">SRM-VEC-YRC</p>
+                <p className="brand">SRM-VEC-YRC</p>
               </Link>
             </li>
             <li className="nav-item">
@@ -43,7 +43,6 @@ class App extends React.Component {
         <div>
           <Switch>
             <Route path="/" exact component={Home}></Route>
-            <Route path="/article" exact component={Event}></Route>
             <Route path="/vols" exact component={Volunteers}></Route>
             <Route path="/bld" exact component={Bldonation}></Route>
             <Route path="/newvols" exact component={Registration}></Route>
@@ -52,6 +51,7 @@ class App extends React.Component {
             <Route path="/about" exact component={About}></Route>
             <Route path="/contact" exact component={Contact}></Route>
             <Route path="/services" exact component={Services}></Route>
+            <Route path="/event/:id" exact component={Event}></Route>
           </Switch>
         </div>
       </Router>
