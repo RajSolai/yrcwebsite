@@ -22,7 +22,7 @@ class Event extends React.Component {
   }
   getData() {
     let articleid = this.props.match.params.id;
-    Axios.get("http://yrc-vec-api.herokuapp.com/event/" + articleid).then(
+    Axios.get("https://yrc-vec-api.herokuapp.com/event/" + articleid).then(
       (res) => {
         console.log(res);
         this.setState({
