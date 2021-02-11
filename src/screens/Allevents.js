@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import Axios from "axios";
-import { CircularProgress } from "@material-ui/core";
 
 const EventCard = React.lazy(() => import("../components/EventCard"));
 

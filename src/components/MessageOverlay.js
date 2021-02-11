@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Fade, Paper } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 
 class MessageOverlay extends Component {
   render() {
     if (this.props.variant === "success") {
       return (
-        <Fade in={true}>
+        <div>
           <Paper
             style={{
               backgroundColor: "#a8df65",
@@ -17,11 +17,11 @@ class MessageOverlay extends Component {
           >
             {this.props.message}
           </Paper>
-        </Fade>
+        </div>
       );
     } else if (this.props.variant === "error") {
       return (
-        <Fade in={true}>
+        <div>
           <Paper
             style={{
               backgroundColor: "#e43f5a",
@@ -33,11 +33,11 @@ class MessageOverlay extends Component {
           >
             {this.props.message}
           </Paper>
-        </Fade>
+        </div>
       );
     } else {
       return (
-        <Fade in={true}>
+        <div>
           <Paper
             style={{
               backgroundColor: "#0e9aa7",
@@ -49,7 +49,7 @@ class MessageOverlay extends Component {
           >
             {this.props.message}
           </Paper>
-        </Fade>
+        </div>
       );
     }
   }

@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import Axios from "axios";
-import { Paper, CircularProgress, Grow } from "@material-ui/core";
+import { Paper, CircularProgress } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Footer from "../components/footer";
 import "../theme/components.scss";

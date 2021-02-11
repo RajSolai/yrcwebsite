@@ -1,6 +1,5 @@
 import React from "react";
 import "./../theme/components.scss";
-import { Zoom } from "react-reveal";
 
 class EventCard extends React.Component {
   render() {
