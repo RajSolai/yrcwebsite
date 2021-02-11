@@ -9,7 +9,7 @@ class About extends React.Component {
         <Grow in={true}>
           <div className="app">
             <div className="spacer-6"></div>
-            <p className="about-para">
+            <article className="about-para">
               <h1>About Us</h1>
               Youth Red Cross club of SRM Valliammai Engineering College is a
               part of India’s Largest Youth Red Cross Society – IRCS (India Red
@@ -23,7 +23,7 @@ class About extends React.Component {
               principles under YRC which are humanity, impartiality, neutrality,
               independence, voluntary service, unity, and universality.
               <h4>The main purpose of organizing the Youth Red Cross is :</h4>
-              <p>
+              <div>
                 <ul>
                   <li>
                     Informing youth members and others the roles and
@@ -75,8 +75,8 @@ class About extends React.Component {
                     </ul>
                   </li>
                 </ul>
-              </p>
-            </p>
+              </div>
+            </article>
           </div>
         </Grow>
         <Footer></Footer>

@@ -79,7 +79,7 @@
   .jumbo-btn {
     margin: 0.2rem;
     background-color: $primary;
-    border: 1px solid $primary;
+    border: 2px solid $primary;
     color: $primary-white;
     box-shadow: $primary-shadow-jumbo;
     font-weight: 600;
@@ -89,12 +89,6 @@
       background-color: $primary-white;
       color: $primary-black;
     }
-  }
-  .jumbo-title {
-    text-shadow: $primary-shadow-jumbo;
-  }
-  .jumbo-content {
-    text-shadow: $primary-shadow-jumbo;
   }
   .jumbo-btnbar {
     @include flex(row, center);

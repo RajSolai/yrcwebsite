@@ -1,20 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Fade } from "@material-ui/core";
 import "./../theme/components.scss";
 
-class Jumbo extends React.Component {
-  animateText(event) {
-    let id = event.target.id;
-    document.getElementById(id).innerHTML += " >>";
-  }
-  animateText2(event) {
-    let id = event.target.id;
-    document.getElementById(id).innerHTML = event.target.value;
-  }
+class Jumbo extends React.Component { 
   render() {
     return (
-      <Fade in={true}>
+      <div>
         <div
           style={{
             margin: "1rem",
@@ -39,8 +30,6 @@ class Jumbo extends React.Component {
                   <button
                     className="jumbo-btn"
                     id="contact-btn"
-                    onMouseOver={this.animateText}
-                    onMouseLeave={this.animateText2}
                     value="Contact Us"
                   >
                     Contact Us
@@ -50,8 +39,6 @@ class Jumbo extends React.Component {
                   <button
                     className="jumbo-btn"
                     id="bld-btn"
-                    onMouseOver={this.animateText}
-                    onMouseLeave={this.animateText2}
                     value="Blood Donation"
                   >
                     Blood Donation
@@ -61,8 +48,6 @@ class Jumbo extends React.Component {
                   <button
                     className="jumbo-btn"
                     id="vol-btn"
-                    onMouseOver={this.animateText}
-                    onMouseLeave={this.animateText2}
                     value="YRC Volunteers"
                   >
                     YRC Volunteers
@@ -75,7 +60,7 @@ class Jumbo extends React.Component {
             </div>
           </div>
         </div>
-      </Fade>
+      </div>
     );
   }
 }

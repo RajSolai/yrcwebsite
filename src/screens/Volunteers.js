@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Axios from "axios";
-import VolunteerCard from "../components/VolunteerCard";
 import { Paper, CircularProgress, Grow } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Footer from "../components/footer";
 import "../theme/components.scss";
+
+const VolunteerCard = React.lazy(()=>import("../components/VolunteerCard"));
 
 class Volunteers extends React.Component {
   constructor(props) {
@@ -48,14 +49,14 @@ class Volunteers extends React.Component {
                 </div>
               ) : (
                 this.state.list.map((data) => (
-                  <div>
+                  <Suspense fallback={<p></p>}>
                     <VolunteerCard
                       imgsrc={data.avatarurl}
                       name={data.name}
                       year={data.year}
                       dept={data.dept}
                     ></VolunteerCard>
-                  </div>
+                  </Suspense>
                 ))
               )}
             </main>

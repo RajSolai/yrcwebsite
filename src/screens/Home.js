@@ -1,12 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "../theme/App.scss";
 import Axios from "axios";
 import thumb from "../assets/thumb.png";
-import RecentCard from "../components/Recentcard";
 import noimg from "../assets/noimg.jpeg";
 import Jumbo from "../components/Jumbo";
 import { CircularProgress } from "@material-ui/core";
 import Footer from "../components/footer";
+
+const RecentCard = React.lazy(() => import("../components/Recentcard"));
 
 class Home extends React.Component {
   constructor(props) {
@@ -42,14 +43,16 @@ class Home extends React.Component {
                   <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
                 </div>
               ) : (
-                this.state.recentEvent.map((data) => (
-                  <RecentCard
-                    title={data.title}
-                    imgurl={data.imgurl}
-                    noimg={noimg}
-                    imgtag={data.imgtag}
-                    desc={data.desc}
-                  ></RecentCard>
+                this.state.recentEvent.map((data,key) => (
+                  <Suspense fallback={<div></div>} key={key}>
+                    <RecentCard
+                      title={data.title}
+                      imgurl={data.imgurl}
+                      noimg={noimg}
+                      imgtag={data.imgtag}
+                      desc={data.desc}
+                    ></RecentCard>
+                  </Suspense>
                 ))
               )}
             </div>

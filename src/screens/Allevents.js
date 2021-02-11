@@ -1,11 +1,12 @@
-import React from "react";
-import EventCard from "../components/EventCard";
+import React, { Suspense } from "react";
 import Axios from "axios";
 import { CircularProgress } from "@material-ui/core";
 
+const EventCard = React.lazy(() => import("../components/EventCard"));
+
 class Allevents extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       events: [],
       isloading: true,
@@ -27,14 +28,16 @@ class Allevents extends React.Component {
               <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
             </div>
           ) : (
-            this.state.events.map((data) => (
-              <EventCard
-                date={data.uploaddate}
-                imgsrc={data.imgurl}
-                imgtag={data.imgtag}
-                title={data.title}
-                story={data.story}
-              ></EventCard>
+            this.state.events.map((data,key) => (
+              <Suspense fallback={<p></p>} key={key}>
+                <EventCard
+                  date={data.uploaddate}
+                  imgsrc={data.imgurl}
+                  imgtag={data.imgtag}
+                  title={data.title}
+                  story={data.story}
+                ></EventCard>
+              </Suspense>
             ))
           )}
         </div>
