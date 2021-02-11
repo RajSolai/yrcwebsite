@@ -55,21 +55,21 @@ class Registration extends React.Component {
   handleProgress() {
     this.setState({ process: "UPLOADING IMAGE" });
   }
-  handleUploadSuccess(filename) {
-    firebase
-      .storage()
-      .ref("avatars")
-      .child(filename)
-      .getDownloadURL()
-      .then((url) => {
-        document.getElementById("spinner").style.display = "none";
-        document.getElementById("progress").style.display = "inline";
-        this.setState({
-          avatarurl: url,
-          process: "100% uploaded",
-          avatarurlBackup: url,
-        });
-      });
+  async handleUploadSuccess(filename) {
+    await firebase
+      	.storage()
+      	.ref("avatars")
+      	.child(filename)
+      	.getDownloadURL()
+      	.then((url) => {
+       		document.getElementById("spinner").style.display = "none";
+        	document.getElementById("progress").style.display = "inline";
+        	this.setState({
+          		avatarurl: url,
+          		process: "100% uploaded",
+          		avatarurlBackup: url,
+        	});
+      	});
   }
   handleUploadError() {
     alert("Image Upload error");

@@ -186,6 +186,7 @@ Link,
     padding: 0;
     margin: 0;
     width: 100%;
+    height: 100%;
   }
   .card-title {
     font-weight: 600;
@@ -246,6 +247,12 @@ button {
   }
 }
 
+@media only screen and (min-width: 1000px){
+  .card-img{
+    height: auto;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .app {
     margin: 0;
@@ -275,6 +282,9 @@ button {
   }
   .spacer {
     margin: 5rem;
+  }
+  .card{
+    width: 90vw;
   }
 }
 

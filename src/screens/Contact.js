@@ -56,7 +56,7 @@ class Contact extends React.Component {
           <div className="spacer-6"></div>
           <div>
             {this.state.contacts.map((data,key) => (
-              <Suspense fallback={<div></div>} key={key}>
+              <Suspense fallback={<div><p>Loading..</p></div>} key={key}>
                 <ContactCard
                   name={data.name}
                   position={data.position}

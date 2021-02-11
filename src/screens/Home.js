@@ -17,14 +17,14 @@ class Home extends React.Component {
     };
     this.openPost = this.openPost.bind(this);
   }
-  componentDidMount() {
-    Axios.get("https://yrc-vec-api.herokuapp.com/recents").then((res) => {
+  async componentDidMount() {
+    await Axios.get("https://yrc-vec-api.herokuapp.com/recents").then((res) => {
       this.setState({ recentEvent: res.data, isloading: false });
     });
   }
-  openPost(datas) {
+  async openPost(datas) {
     let temp = JSON.stringify(datas);
-    localStorage.setItem("tempxx", temp);
+    await localStorage.setItem("tempxx", temp);
     this.props.history.push("/article");
   }
   render() {
