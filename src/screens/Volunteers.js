@@ -23,7 +23,7 @@ class Volunteers extends React.Component {
   render() {
     return (
       <>
-        <Grow in={true}>
+        <section>
           <div className="app">
             <div className="spacer-6"></div>
             <Link to="newvols" className="link">
@@ -48,8 +48,8 @@ class Volunteers extends React.Component {
                   <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
                 </div>
               ) : (
-                this.state.list.map((data) => (
-                  <Suspense fallback={<p></p>}>
+                this.state.list.map((data,key) => (
+                  <Suspense fallback={<p></p>} key={key}>
                     <VolunteerCard
                       imgsrc={data.avatarurl}
                       name={data.name}
@@ -61,7 +61,7 @@ class Volunteers extends React.Component {
               )}
             </main>
           </div>
-        </Grow>
+        </section>
         <Footer></Footer>
       </>
     );

@@ -24,7 +24,6 @@ class Allevents extends React.Component {
         <div className="envelope">
           {this.state.isloading === true ? (
             <div className="skeletal-box">
-              <CircularProgress color="secondary"></CircularProgress>
               <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
             </div>
           ) : (

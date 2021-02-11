@@ -49,7 +49,7 @@ class Bldonation extends React.Component {
   render() {
     return (
       <>
-        <Grow in={true}>
+        <section>
           <div className="app">
             <div className="spacer-6"></div>
             <Link to="bldonors" className="link">
@@ -146,7 +146,7 @@ class Bldonation extends React.Component {
               <button onClick={this.uploadbldRq}>Submit Request</button>
             </div>
           </div>
-        </Grow>
+        </section>
         <Footer></Footer>
       </>
     );

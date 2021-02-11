@@ -1,11 +1,11 @@
 import React from "react";
 import "./../theme/components.scss";
-import { Grow } from "@material-ui/core";
+import { Zoom } from "react-reveal";
 
 class EventCard extends React.Component {
   render() {
     return (
-      <Grow in={true}>
+      <div>
         <div className="card">
           <img
             src={this.props.imgsrc}
@@ -26,7 +26,7 @@ class EventCard extends React.Component {
             </div>
           </div>
         </div>
-      </Grow>
+      </div>
     );
   }
 }

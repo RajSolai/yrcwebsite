@@ -4,7 +4,6 @@ import Axios from "axios";
 import thumb from "../assets/thumb.png";
 import noimg from "../assets/noimg.jpeg";
 import Jumbo from "../components/Jumbo";
-import { CircularProgress } from "@material-ui/core";
 import Footer from "../components/footer";
 
 const RecentCard = React.lazy(() => import("../components/Recentcard"));
@@ -39,8 +38,7 @@ class Home extends React.Component {
             <div className="envelope" id="envelope">
               {this.state.isloading === true ? (
                 <div className="skeletal-box">
-                  <CircularProgress color="secondary"></CircularProgress>
-                  <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
+                  <strong style={{ marginLeft: ".5rem" }}>Loading...</strong>
                 </div>
               ) : (
                 this.state.recentEvent.map((data,key) => (

@@ -1,10 +1,9 @@
 import React from "react";
-import { Fade } from "@material-ui/core";
 
 class RecentCard extends React.Component {
   render() {
     return (
-      <Fade in={true}>
+      <div>
         <div className="card">
           <img
             src={
@@ -22,7 +21,7 @@ class RecentCard extends React.Component {
             </div>
           </div>
         </div>
-      </Fade>
+      </div>
     );
   }
 }

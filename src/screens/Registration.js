@@ -8,7 +8,8 @@ import {
   FormControlLabel,
   Switch,
 } from "@material-ui/core";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/storage";
 import FileUploader from "react-firebase-file-uploader";
 import MessageOverlay from "../components/MessageOverlay";
 import Footer from "../components/footer";
@@ -107,7 +108,7 @@ class Registration extends React.Component {
   render() {
     return (
       <>
-        <Grow in={true}>
+        <section>
           <div className="app">
             <div className="spacer-6"></div>
             <Container>
@@ -241,7 +242,7 @@ class Registration extends React.Component {
               </div>
             </Container>
           </div>
-        </Grow>
+        </section>
         <Footer></Footer>
       </>
     );

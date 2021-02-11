@@ -54,7 +54,7 @@ class DonorReg extends React.Component {
   render() {
     return (
       <>
-        <Grow in={true}>
+        <section>
           <div className="app">
             <div className="spacer-6"></div>
             <div className="form">
@@ -154,7 +154,7 @@ class DonorReg extends React.Component {
               <button onClick={this.postEvent}>Register</button>
             </div>
           </div>
-        </Grow>
+        </section>
         <Footer></Footer>
       </>
     );

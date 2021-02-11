@@ -6,7 +6,7 @@ class Services extends React.Component {
   render() {
     return (
       <>
-        <Grow in={true}>
+        <article>
           <div className="app">
             <div className="spacer-6"></div>
             <div className="about-para">
@@ -69,7 +69,7 @@ class Services extends React.Component {
               </div>
             </div>
           </div>
-        </Grow>
+        </article>
         <Footer></Footer>
       </>
     );

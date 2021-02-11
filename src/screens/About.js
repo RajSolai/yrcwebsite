@@ -6,7 +6,7 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <Grow in={true}>
+        <div>
           <div className="app">
             <div className="spacer-6"></div>
             <article className="about-para">
@@ -78,7 +78,7 @@ class About extends React.Component {
               </div>
             </article>
           </div>
-        </Grow>
+        </div>
         <Footer></Footer>
       </>
     );

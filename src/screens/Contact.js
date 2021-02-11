@@ -1,7 +1,7 @@
-import React from "react";
-import { Grow } from "@material-ui/core";
-import ContactCard from "../components/ContactCard";
+import React , {Suspense,lazy} from "react";
 import Footer from "../components/footer";
+
+const ContactCard = lazy(()=>import("../components/ContactCard"));
 
 class Contact extends React.Component {
   constructor(props) {
@@ -51,23 +51,23 @@ class Contact extends React.Component {
   render() {
     return (
       <>
-      <Grow in={true}>
+      <section>
         <div className="app">
           <div className="spacer-6"></div>
           <div>
-            {this.state.contacts.map((data) => (
-              <div>
+            {this.state.contacts.map((data,key) => (
+              <Suspense fallback={<div></div>} key={key}>
                 <ContactCard
                   name={data.name}
                   position={data.position}
                   phoneno={data.phoneno}
                   mailid={data.mailid}
                 ></ContactCard>
-              </div>
+              </Suspense>
             ))}
           </div>
         </div>
-      </Grow>
+      </section>
       <Footer></Footer>
       </>
     );
