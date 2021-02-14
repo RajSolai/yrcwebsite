@@ -15,18 +15,20 @@ class Home extends React.Component {
       recentEvent: [],
       isloading: true,
     };
-    this.openPost = this.openPost.bind(this);
+    //this.openPost = this.openPost.bind(this);
   }
   async componentDidMount() {
     await Axios.get("https://yrc-vec-api.herokuapp.com/recents").then((res) => {
       this.setState({ recentEvent: res.data, isloading: false });
+    }).catch(err=>{
+      throw err;
     });
   }
-  async openPost(datas) {
-    let temp = JSON.stringify(datas);
-    await localStorage.setItem("tempxx", temp);
-    this.props.history.push("/article");
-  }
+  // async openPost(datas) {
+  //   let temp = JSON.stringify(datas);
+  //   await localStorage.setItem("tempxx", temp);
+  //   this.props.history.push("/article");
+  // }
   render() {
     return (
       <>

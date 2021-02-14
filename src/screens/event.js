@@ -17,25 +17,26 @@ class Event extends React.Component {
     };
   }
   componentWillMount() {
-    console.log("hello");
-    this.getData();
+    this.getData().catch((err) => {
+      throw err;
+    });
   }
-  getData() {
+  async getData() {
     let articleid = this.props.match.params.id;
-    Axios.get("https://yrc-vec-api.herokuapp.com/event/" + articleid).then(
-      (res) => {
-        console.log(res);
-        this.setState({
-          date: res.data.uploaddate,
-          title: res.data.title,
-          imgurl: res.data.imgurl,
-          tag: res.data.imgtag,
-          story: res.data.story,
-          desc: res.data.desc,
-          isloading: false,
-        });
-      }
-    );
+    await Axios.get(
+      "https://yrc-vec-api.herokuapp.com/event/" + articleid
+    ).then((res) => {
+      console.log(res);
+      this.setState({
+        date: res.data.uploaddate,
+        title: res.data.title,
+        imgurl: res.data.imgurl,
+        tag: res.data.imgtag,
+        story: res.data.story,
+        desc: res.data.desc,
+        isloading: false,
+      });
+    });
   }
   render() {
     if (this.state.isloading) {

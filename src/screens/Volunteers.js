@@ -15,8 +15,8 @@ class Volunteers extends React.Component {
       isloading: true,
     };
   }
-  componentDidMount() {
-    Axios.get("https://yrc-vec-api.herokuapp.com/volunteers").then((data) => {
+  async componentDidMount() {
+    await Axios.get("https://yrc-vec-api.herokuapp.com/volunteers").then((data) => {
       this.setState({ list: data.data, isloading: false });
     });
   }

@@ -71,8 +71,8 @@ class Registration extends React.Component {
         	});
       	});
   }
-  handleUploadError() {
-    alert("Image Upload error");
+  async handleUploadError() {
+    await alert("Image Upload error");
   }
   handleUploadStart() {
     document.getElementById("spinner").style.display = "inline";
