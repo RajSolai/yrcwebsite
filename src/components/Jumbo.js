@@ -5,7 +5,7 @@ import "./../theme/components.scss";
 class Jumbo extends React.Component { 
   render() {
     return (
-      <div>
+      <>
         <div
           style={{
             margin: "1rem",
@@ -60,7 +60,7 @@ class Jumbo extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

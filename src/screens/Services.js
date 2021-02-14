@@ -20,7 +20,7 @@ class Services extends React.Component {
                 <li>Disaster preparedness; and</li>
                 <li>Health and Care in the Community.</li>
               </ul>
-              <div className="slide-in-1">
+              <div>
                 <ul>
                   <h3>Health and Care in the Community.</h3>
                   <li>Social Emergency Response Volunteering (SERV),</li>
@@ -32,7 +32,7 @@ class Services extends React.Component {
                   <li>Partnership for Resilience (PFR)</li>
                 </ul>
               </div>
-              <div className="slide-in-2">
+              <div>
                 <p>
                   These aim to make communities more aware of the risks they may
                   face and know how to reduce their vulnerability and how to
@@ -55,7 +55,7 @@ class Services extends React.Component {
                   Societies to network .
                 </p>
                 <h5>Other Major activities include:</h5>
-                <div className="slide-in-2">
+                <div>
                   <p>
                     Hospital services <br /> HIV/AIDS awareness <br /> Building
                     home for the needy <br /> Vocational training <br /> Tracing

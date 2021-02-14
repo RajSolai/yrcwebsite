@@ -5,7 +5,7 @@ import { PhoneRounded, MailRounded } from "@material-ui/icons";
 class ContactCard extends React.Component {
   render() {
     return (
-      <div>
+      <>
         <Paper
           style={{
             padding: "1rem",
@@ -36,7 +36,7 @@ class ContactCard extends React.Component {
             </li>
           </ul>
         </Paper>
-      </div>
+      </>
     );
   }
 }

@@ -3,7 +3,7 @@ import React from "react";
 class RecentCard extends React.Component {
   render() {
     return (
-      <div>
+      <>
         <div className="card">
           <img
             src={
@@ -21,7 +21,7 @@ class RecentCard extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
