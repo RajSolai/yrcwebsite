@@ -73,6 +73,7 @@ h6 {
   margin: 1rem;
 }
 .nav-bar {
+  z-index: 2;
   margin: 0;
   padding: 0;
   position: fixed;
@@ -218,18 +219,7 @@ button {
   position: absolute;
   right: -200px;
 }
-@for $delay from 1 to 3 {
-  .slide-in-l-#{$delay} {
-    $temp: unquote($delay + "s");
-    @include slidein($temp, "left");
-  }
-}
-@for $delay from 1 to 3 {
-  .slide-in-r-#{$delay} {
-    $temp: unquote($delay + "s");
-    @include slidein($temp, "right");
-  }
-}
+
 .footer {
   @include flex(column, center);
   width: 100%;

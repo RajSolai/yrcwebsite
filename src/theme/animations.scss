@@ -18,80 +18,9 @@
     background-color: $primary;
   }
 }
-@keyframes slideleftKeyframes {
-  0% {
-    left: -80;
-    display: none;
-  }
-  10% {
-    left: -60;
-    display: inline;
-    color: transparent;
-  }
-  20% {
-    left: -40;
-    color: rgba($color: #000000, $alpha: 0.5);
-  }
-  40% {
-    left: -20;
-    color: rgba($color: #000000, $alpha: 0.9);
-  }
-  50% {
-    left: -10;
-    color: #000000;
-  }
-  70% {
-    left: -5;
-  }
-  90% {
-    left: 0;
-  }
-  100% {
-    left: 0;
-  }
-}
-@keyframes sliderightKeyframes {
-  0% {
-    right: -80;
-    display: none;
-  }
-  10% {
-    right: -60;
-    display: inline;
-    color: transparent;
-  }
-  20% {
-    right: -40;
-    color: rgba($color: #000000, $alpha: 0.5);
-  }
-  40% {
-    right: -20;
-    color: rgba($color: #000000, $alpha: 0.9);
-  }
-  50% {
-    right: -10;
-    color: #000000;
-  }
-  70% {
-    right: -5;
-  }
-  90% {
-    right: 0;
-  }
-  100% {
-    right: 0;
-  }
-}
+
 
 /* animations */
 @mixin colorchange {
   animation: 8s cubic-bezier(.65,.05,.36,1) infinite colorChangeKeyframes;
-}
-@mixin slidein($delayParam, $direction) {
-  @if $direction == "left" {
-    animation: $delayParam ease-in 1 slideleftKeyframes forwards;
-  }
-  @if $direction == "right" {
-    animation: $delayParam ease-in 1 sliderightKeyframes forwards;
-  }
 }
