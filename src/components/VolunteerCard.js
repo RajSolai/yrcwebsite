@@ -1,12 +1,12 @@
 import React from "react";
-import { Grow, Paper } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import usericon from "../assets/usericon.png";
 import "./../theme/components.scss";
 
 class VolunteerCard extends React.Component {
   render() {
     return (
-      <Grow in={true}>
+      <>
         <div
           style={{
             margin: "1rem",
@@ -46,7 +46,7 @@ class VolunteerCard extends React.Component {
             </div>
           </Paper>
         </div>
-      </Grow>
+      </>
     );
   }
 }
