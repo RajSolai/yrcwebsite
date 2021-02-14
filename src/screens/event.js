@@ -26,7 +26,6 @@ class Event extends React.Component {
     await Axios.get(
       "https://yrc-vec-api.herokuapp.com/event/" + articleid
     ).then((res) => {
-      console.log(res);
       this.setState({
         date: res.data.uploaddate,
         title: res.data.title,
