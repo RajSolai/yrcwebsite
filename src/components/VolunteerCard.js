@@ -12,7 +12,7 @@ class VolunteerCard extends React.Component {
             margin: "1rem",
           }}
         >
-          <Paper elevation={3}>
+          <Paper elevation={2}>
             <div className="fb">
               <img
                 alt={this.props.name}
