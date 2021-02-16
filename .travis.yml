@@ -13,4 +13,4 @@ before_deploy:
 deploy:
   provider: firebase
   token:
-    secure: "1//0ga3f1zP-cNp1CgYIARAAGBASNwF-L9IrzNb_cXXHNIkCVfedIGHA4Hq79-6GzDbX844A8IRn0WK6dtsRGkNEciB_Sg9h7RCkydI"
+    secure: "0ga3f1zP-cNp1CgYIARAAGBASNwF-L9IrzNb_cXXHNIkCVfedIGHA4Hq79-6GzDbX844A8IRn0WK6dtsRGkNEciB_Sg9h7RCkydI"
