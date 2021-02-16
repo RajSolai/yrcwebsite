@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "12.0"
+branches:
+  only:
+    - master
+before_script:
+  - npm i -g yarn
+script:
+  - yarn install
+before_deploy:
+  - yarn build
+deploy:
+  provider: firebase
+  token:
+    secure: "1//0ga3f1zP-cNp1CgYIARAAGBASNwF-L9IrzNb_cXXHNIkCVfedIGHA4Hq79-6GzDbX844A8IRn0WK6dtsRGkNEciB_Sg9h7RCkydI"
