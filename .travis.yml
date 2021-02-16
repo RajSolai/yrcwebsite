@@ -1,16 +1,19 @@
 language: node_js
 node_js:
-  - "12.0"
+- '12.0'
 branches:
   only:
-    - master
+  - master
 before_script:
-  - npm i -g yarn
+- npm i -g yarn
 script:
-  - yarn install
+- yarn install
 before_deploy:
-  - yarn build
+- yarn build
 deploy:
   provider: firebase
   token:
-    secure: "0ga3f1zP-cNp1CgYIARAAGBASNwF-L9IrzNb_cXXHNIkCVfedIGHA4Hq79-6GzDbX844A8IRn0WK6dtsRGkNEciB_Sg9h7RCkydI"
+    secure: diY/JpMON8TCtMaj3me/uV6gbhQEzBNQZczs2Mc51aext33Z5+9c1nlYOFVtuU8FWVnllO/8tIIYkswuIUPSJ4UsNdMuW0K9BiqI71RraM70ycotOv/LFvYOIKVkw6O3YVyKn/kfZe5p5NdF38MN7B53WquUD3rFRheWUhZ+koLeJyOXCPrd5Ud4utqMzGsCUpQQTbVWc5eIqE4kXINsGaYaPyW8hH137U8/OMT/6BVndOv6qpoiAfZ0s+L0/+o/1sRkuCyxVVO6SqzDhrg3fYINuekf9VEIzjN7jw9HzieXx4suP3zYasmp8+yB2GwyXysaJN+23+VQqjmz3LeVa0/Ji4TGvqLmzMY7dLZDI86e1zdSg+9HlMDBySzoA6znt3qLLLR6bEpaOvDgBLkhn+yTx11pUlcs2UtxrohDHCfbRnVCFV899pOFWsbLmA+xyiLfhDcdGuMpaAcbgkzEGPgfXIpF7WFoCa92EYm2m5TlyvgCYVb/C2N6I/0+yRnDOMt15avuoL2/hCwYSxBEx+NWHAa3m2pWAXJYoZum3yjU9koxD0zNIvZdTMq+gpD5MZ0F1M3PtDW0JvGNwMM4QkRmOIhtSbIkPhvWXwVtfV+YMpmHQnVie3NneTrPj6elC/FPlkUfKZ3Fvd7iYjSapIb9d5EU1MHCDoH18xhjWpQ=
+env:
+  global:
+    secure: diY/JpMON8TCtMaj3me/uV6gbhQEzBNQZczs2Mc51aext33Z5+9c1nlYOFVtuU8FWVnllO/8tIIYkswuIUPSJ4UsNdMuW0K9BiqI71RraM70ycotOv/LFvYOIKVkw6O3YVyKn/kfZe5p5NdF38MN7B53WquUD3rFRheWUhZ+koLeJyOXCPrd5Ud4utqMzGsCUpQQTbVWc5eIqE4kXINsGaYaPyW8hH137U8/OMT/6BVndOv6qpoiAfZ0s+L0/+o/1sRkuCyxVVO6SqzDhrg3fYINuekf9VEIzjN7jw9HzieXx4suP3zYasmp8+yB2GwyXysaJN+23+VQqjmz3LeVa0/Ji4TGvqLmzMY7dLZDI86e1zdSg+9HlMDBySzoA6znt3qLLLR6bEpaOvDgBLkhn+yTx11pUlcs2UtxrohDHCfbRnVCFV899pOFWsbLmA+xyiLfhDcdGuMpaAcbgkzEGPgfXIpF7WFoCa92EYm2m5TlyvgCYVb/C2N6I/0+yRnDOMt15avuoL2/hCwYSxBEx+NWHAa3m2pWAXJYoZum3yjU9koxD0zNIvZdTMq+gpD5MZ0F1M3PtDW0JvGNwMM4QkRmOIhtSbIkPhvWXwVtfV+YMpmHQnVie3NneTrPj6elC/FPlkUfKZ3Fvd7iYjSapIb9d5EU1MHCDoH18xhjWpQ=
