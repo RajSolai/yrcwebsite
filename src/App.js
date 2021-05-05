@@ -3,11 +3,11 @@ import "./theme/App.scss";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 const Home = lazy(() => import("./screens/Home"));
-//const Event = lazy(()=>import('./screens/event'));
+const Event = lazy(()=>import('./screens/event'));
 const Volunteers = lazy(() => import("./screens/Volunteers"));
-const Bldonation = lazy(() => import("./screens/Bldonation"));
+//const Bldonation = lazy(() => import("./screens/Bldonation"));
 const Registration = lazy(() => import("./screens/Registration"));
-const DonorReg = lazy(() => import("./screens/DonorReg"));
+//const DonorReg = lazy(() => import("./screens/DonorReg"));
 const Allevents = lazy(() => import("./screens/Allevents"));
 const About = lazy(() => import("./screens/About"));
 const Contact = lazy(() => import("./screens/Contact"));
@@ -53,7 +53,7 @@ class App extends React.Component {
               <Route path="/about" exact component={About}></Route>
               <Route path="/contact" exact component={Contact}></Route>
               <Route path="/services" exact component={Services}></Route>
-              {/* <Route path="/event/:id" exact component={Event}></Route> */}
+              <Route path="/event/:id" exact component={Event}></Route>
             </Switch>
           </Suspense>
         </div>

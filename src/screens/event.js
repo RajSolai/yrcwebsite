@@ -24,7 +24,7 @@ class Event extends React.Component {
   async getData() {
     let articleid = this.props.match.params.id;
     await Axios.get(
-      "https://yrc-vec-api.herokuapp.com/event/" + articleid
+      "https://vec-yrc-api.herokuapp.com/event/" + articleid
     ).then((res) => {
       this.setState({
         date: res.data.uploaddate,
