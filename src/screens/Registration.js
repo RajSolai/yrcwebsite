@@ -85,12 +85,13 @@ class Registration extends React.Component {
       dept: this.state.dept,
       year: this.state.year,
     };
-    console.dir(data);
-    await Axios.post("https://yrc-vec-api.herokuapp.com/volunteers", data)
+    await Axios.post("https://vec-yrc-api.herokuapp.com/volunteers/add", data)
       .then((res) => {
+        console.log(res);
         document.getElementById("feedback").style.display = "inline";
       })
       .catch((err) => {
+        console.error(err);
         document.getElementById("error").style.display = "inline";
       });
   }

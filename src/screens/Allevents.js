@@ -12,7 +12,7 @@ class Allevents extends React.Component {
     };
   }
   componentDidMount() {
-    Axios.get("https://yrc-vec-api.herokuapp.com/events").then((res) => {
+    Axios.get("https://vec-yrc-api.herokuapp.com/events").then((res) => {
       this.setState({ events: res.data, isloading: false });
     });
   }

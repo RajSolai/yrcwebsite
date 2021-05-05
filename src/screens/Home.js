@@ -18,7 +18,7 @@ class Home extends React.Component {
     //this.openPost = this.openPost.bind(this);
   }
   async componentDidMount() {
-    await Axios.get("https://yrc-vec-api.herokuapp.com/recents").then((res) => {
+    await Axios.get("https://vec-yrc-api.herokuapp.com/recents").then((res) => {
       this.setState({ recentEvent: res.data, isloading: false });
     }).catch(err=>{
       throw err;
