@@ -35,7 +35,7 @@ class Jumbo extends React.Component {
                     Contact Us
                   </button>
                 </Link>
-                <Link to="/bld">
+                {/* <Link to="/bld">
                   <button
                     className="jumbo-btn"
                     id="bld-btn"
@@ -43,7 +43,7 @@ class Jumbo extends React.Component {
                   >
                     Blood Donation
                   </button>
-                </Link>
+                </Link> */}
                 <Link to="/vols">
                   <button
                     className="jumbo-btn"
