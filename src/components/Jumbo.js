@@ -16,8 +16,9 @@ class Jumbo extends React.Component {
               <h2
                 className="jumbo-title"
                 style={{
-                  fontFamily: "Montserrat , sans-serif",
-                  fontWeight: "900",
+                  fontFamily: "serif",
+                  fontWeight: "bold",
+                  fontSize: "35px"
                 }}
               >
                 SRM-VEC YRC
