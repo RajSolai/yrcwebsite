@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: 14
       - run: npm i -g yarn
+      - run: npm i -g firebase-tools
 
       - run:  yarn
       
