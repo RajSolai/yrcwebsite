@@ -15,10 +15,10 @@ jobs:
       -run: npm i -g yarn
 
       -name: Install Dependencies
-      run:  yarn
+      -run:  yarn
       
       -name: Build Static Pages
-      run: yarn build
+      -run: yarn build
 
       -name: Deploy to Firebase
-      run: sh scripts/deploy.sh
+      -run: sh scripts/deploy.sh
