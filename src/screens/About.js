@@ -1,7 +1,7 @@
-import React from "react";
+import { Component } from "react";
 import Footer from "../components/footer";
 
-class About extends React.Component {
+class About extends Component {
   render() {
     return (
       <>
