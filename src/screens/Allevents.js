@@ -1,4 +1,4 @@
-import React,{ PureComponent , Suspense, lazy } from "react";
+import React, { PureComponent, Suspense, lazy } from "react";
 import Axios from "axios";
 
 const EventCard = lazy(() => import("../components/EventCard"));
@@ -18,28 +18,28 @@ class Allevents extends PureComponent {
   }
   render() {
     return (
-      <div className="app">
-        <div className="spacer-6"></div>
-        <div className="envelope">
-          {this.state.isloading === true ? (
-            <div className="skeletal-box">
+      <>
+        <div className="app">
+          <div className="spacer-6"></div>
+          <div className="envelope">
+            {this.state.isloading === true ? (
               <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
-            </div>
-          ) : (
-            this.state.events.map((data) => (
-              <Suspense fallback={<p></p>} key={data.id}>
-                <EventCard
-                  date={data.uploaddate}
-                  imgsrc={data.imgurl}
-                  imgtag={data.imgtag}
-                  title={data.title}
-                  story={data.story}
-                ></EventCard>
-              </Suspense>
-            ))
-          )}
+            ) : (
+              this.state.events.map((data) => (
+                <Suspense fallback={<p></p>} key={data.id}>
+                  <EventCard
+                    date={data.uploaddate}
+                    imgsrc={data.imgurl}
+                    imgtag={data.imgtag}
+                    title={data.title}
+                    story={data.story}
+                  ></EventCard>
+                </Suspense>
+              ))
+            )}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

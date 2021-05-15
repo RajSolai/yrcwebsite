@@ -43,9 +43,7 @@ class Volunteers extends Component {
             </Link>
             <main className="vol-cont">
               {this.state.isloading === true ? (
-                <div className="skeletal-box">
                   <strong style={{ marginLeft: ".5rem" }}>Loading...</strong>
-                </div>
               ) : (
                 this.state.list.map((data) => (
                   <Suspense fallback={<div></div>} key={data.id}>

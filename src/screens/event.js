@@ -15,7 +15,7 @@ class Event extends PureComponent {
       isloading: true,
     };
   }
-  componentWillMount() {
+  componentDidMount() {
     this.getData().catch((err) => {
       throw err;
     });

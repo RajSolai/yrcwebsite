@@ -25,34 +25,15 @@
     @include flex(row, center);
   }
 }
-@for $val from 1 to 10 {
-  .padding-#{$val} {
-    $temp: unquote($val + "rem");
-    padding: $temp;
-  }
+.padding-1 {
+  padding: 1rem;
 }
-@for $val from 1 to 10 {
-  .margin-#{$val} {
-    $temp: unquote($val + "rem");
-    margin: $temp;
-  }
-  .margin-rl-#{$val} {
-    $temp: unquote($val + "rem");
-    margin-right: $temp;
-    margin-left: $temp;
-  }
+.margin-rl-1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .fb {
   @include flex(row, center);
-}
-.fb-c {
-  @include flex(column, center);
-}
-.mb {
-  @include flex(row, center);
-  justify-content: center;
-  align-content: center;
-  padding: 0.5rem;
 }
 .hyper-link {
   text-decoration: none;
@@ -60,12 +41,6 @@
   &::after {
     color: $primary-black;
   }
-}
-.imgs {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
 }
 .jumbo {
   background-color: $primary-bg;
@@ -96,9 +71,6 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .mb {
-    flex-direction: column;
-  }
   .imgs {
     height: 200;
   }
@@ -113,10 +85,6 @@
     list-style-type: none;
     text-align: center;
   }
-  .paper {
-    @include flex(column, none);
-    box-shadow: $primary-shadow;
-  }
   .img-holder {
     padding: 0;
     margin: 0;
@@ -130,11 +98,6 @@
   }
 }
 @media only screen and (max-width: 600px) {
-  .footer {
-    display: none;
-  }
-}
-@media all and (display-mode: standalone) {
   .footer {
     display: none;
   }
