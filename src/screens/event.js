@@ -1,9 +1,9 @@
-import React from "react";
+import React , {Component} from "react";
 import Axios from "axios";
 import { CircularProgress } from "@material-ui/core";
 import ReactMarkdown from "react-markdown";
 
-class Event extends React.Component {
+class Event extends Component {
   constructor(props) {
     super(props);
     this.state = {

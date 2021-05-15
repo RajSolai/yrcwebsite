@@ -1,9 +1,9 @@
-import React, { Suspense } from "react";
+import React,{ Suspense , Component , lazy } from "react";
 import Axios from "axios";
 
-const EventCard = React.lazy(() => import("../components/EventCard"));
+const EventCard = lazy(() => import("../components/EventCard"));
 
-class Allevents extends React.Component {
+class Allevents extends Component {
   constructor() {
     super();
     this.state = {
