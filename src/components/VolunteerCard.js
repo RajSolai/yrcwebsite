@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper } from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
 import usericon from "../assets/usericon.png";
 import "./../theme/components.scss";
 

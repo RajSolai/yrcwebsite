@@ -1,13 +1,13 @@
-import React, { Suspense } from "react";
+import React,{Component , lazy , Suspense} from "react";
 import Axios from "axios";
-import { Paper, CircularProgress } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import Paper from "@material-ui/core/Paper";
+import Link from "react-router-dom/Link";
 import Footer from "../components/footer";
 import "../theme/components.scss";
 
-const VolunteerCard = React.lazy(()=>import("../components/VolunteerCard"));
+const VolunteerCard = lazy(()=>import("../components/VolunteerCard"));
 
-class Volunteers extends React.Component {
+class Volunteers extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,12 +44,11 @@ class Volunteers extends React.Component {
             <main className="vol-cont">
               {this.state.isloading === true ? (
                 <div className="skeletal-box">
-                  <CircularProgress color="secondary"></CircularProgress>
-                  <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
+                  <strong style={{ marginLeft: ".5rem" }}>Loading...</strong>
                 </div>
               ) : (
                 this.state.list.map((data) => (
-                  <Suspense fallback={<p></p>} key={data.id}>
+                  <Suspense fallback={<div></div>} key={data.id}>
                     <VolunteerCard
                       imgsrc={data.avatarurl}
                       name={data.name}

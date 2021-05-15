@@ -1,4 +1,4 @@
-import React,{ Suspense , PureComponent , lazy } from "react";
+import React,{ PureComponent , Suspense, lazy } from "react";
 import Axios from "axios";
 
 const EventCard = lazy(() => import("../components/EventCard"));

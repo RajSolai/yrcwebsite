@@ -1,19 +1,17 @@
-import React from "react";
+import React,{Component} from "react";
 import Axios from "axios";
-import {
-  TextField,
-  Container,
-  LinearProgress,
-  FormControlLabel,
-  Switch,
-} from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import Container from "@material-ui/core/Container";
+import LinearProgress from "@material-ui/core/LinearProgress";
+import Switch from "@material-ui/core/Switch";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import firebase from "firebase/app";
 import "firebase/storage";
 import FileUploader from "react-firebase-file-uploader";
 import MessageOverlay from "../components/MessageOverlay";
 import Footer from "../components/footer";
 
-class Registration extends React.Component {
+class Registration extends Component {
   constructor(props) {
     super(props);
     this.state = {

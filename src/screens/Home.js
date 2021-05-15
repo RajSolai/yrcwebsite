@@ -1,13 +1,13 @@
-import React, { Suspense } from "react";
+import React , {Suspense , PureComponent , lazy} from "react";
 import "../theme/App.scss";
 import Axios from "axios";
 import thumb from "../assets/thumb.png";
 import noimg from "../assets/noimg.jpeg";
 import Jumbo from "../components/Jumbo";
 
-const RecentCard = React.lazy(() => import("../components/Recentcard"));
+const RecentCard = lazy(() => import("../components/Recentcard"));
 
-class Home extends React.Component {
+class Home extends PureComponent {
   constructor() {
     super();
     this.state = {
