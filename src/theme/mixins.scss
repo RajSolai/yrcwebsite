@@ -4,10 +4,6 @@
   background-color: $bgcolor;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
-@mixin grid() {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-}
 @mixin flex($direction,$align) {
   display: flex;
   flex-direction: $direction;

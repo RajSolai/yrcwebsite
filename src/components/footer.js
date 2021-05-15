@@ -1,8 +1,7 @@
 import React from "react";
-import { SocialIcon } from "react-social-icons";
+import {SocialIcon} from "react-social-icons";
 
-class Footer extends React.Component {
-  render() {
+const Footer = () => {
     return (
       <>
         <div className="footer">
@@ -45,7 +44,6 @@ class Footer extends React.Component {
         </div>
       </>
     );
-  }
 }
 
 export default Footer;

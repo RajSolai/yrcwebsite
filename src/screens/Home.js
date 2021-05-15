@@ -1,34 +1,26 @@
-import React, { Suspense } from "react";
+import React, { Suspense, PureComponent, lazy } from "react";
 import "../theme/App.scss";
 import Axios from "axios";
 import thumb from "../assets/thumb.png";
 import noimg from "../assets/noimg.jpeg";
 import Jumbo from "../components/Jumbo";
-import Footer from "../components/footer";
 
-const RecentCard = React.lazy(() => import("../components/Recentcard"));
+const RecentCard = lazy(() => import("../components/Recentcard"));
 
-class Home extends React.Component {
-  constructor(props) {
-    super(props);
+class Home extends PureComponent {
+  constructor() {
+    super();
     this.state = {
       recentEvent: [],
       isloading: true,
     };
-    //this.openPost = this.openPost.bind(this);
   }
   async componentDidMount() {
     await Axios.get("https://vec-yrc-api.herokuapp.com/recents").then((res) => {
       this.setState({ recentEvent: res.data, isloading: false });
-    }).catch(err=>{
-      throw err;
     });
   }
-  // async openPost(datas) {
-  //   let temp = JSON.stringify(datas);
-  //   await localStorage.setItem("tempxx", temp);
-  //   this.props.history.push("/article");
-  // }
+
   render() {
     return (
       <>
@@ -36,15 +28,13 @@ class Home extends React.Component {
           <div className="spacer-6"></div>
           <Jumbo image={thumb}></Jumbo>
           <main>
-            <h3 style={{ marginLeft: "1rem" }}>Recent Posts</h3>
+            <h3 className="margin-l-1">Recent Posts</h3>
             <div className="envelope" id="envelope">
               {this.state.isloading === true ? (
-                <div className="skeletal-box">
-                  <strong style={{ marginLeft: ".5rem" }}>Loading...</strong>
-                </div>
+                <strong className="margin-l-05">Loading...</strong>
               ) : (
-                this.state.recentEvent.map((data,key) => (
-                  <Suspense fallback={<div></div>} key={key}>
+                this.state.recentEvent.map((data) => (
+                  <Suspense fallback={<div></div>} key={data.id}>
                     <RecentCard
                       title={data.title}
                       imgurl={data.imgurl}
@@ -58,7 +48,6 @@ class Home extends React.Component {
             </div>
           </main>
         </div>
-        <Footer></Footer>
       </>
     );
   }

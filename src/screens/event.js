@@ -1,9 +1,8 @@
-import React from "react";
+import React,{PureComponent} from "react";
 import Axios from "axios";
-import { CircularProgress } from "@material-ui/core";
 import ReactMarkdown from "react-markdown";
 
-class Event extends React.Component {
+class Event extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +15,7 @@ class Event extends React.Component {
       isloading: true,
     };
   }
-  componentWillMount() {
+  componentDidMount() {
     this.getData().catch((err) => {
       throw err;
     });
@@ -42,7 +41,7 @@ class Event extends React.Component {
       return (
         <div className="app">
           <div className="spacer-6">
-            <CircularProgress color="secondary"></CircularProgress>
+            <p>Loading ...</p>
           </div>
         </div>
       );
