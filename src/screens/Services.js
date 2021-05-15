@@ -1,8 +1,7 @@
 import React from "react";
 import Footer from "../components/footer";
 
-class Services extends React.Component {
-  render() {
+const Services = () => {
     return (
       <>
         <article>
@@ -72,7 +71,6 @@ class Services extends React.Component {
         <Footer></Footer>
       </>
     );
-  }
 }
 
 export default Services;

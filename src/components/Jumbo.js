@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./../theme/components.scss";
 
-class Jumbo extends React.Component { 
-  render() {
+const Jumbo = (props) => { 
     return (
       <>
         <div
@@ -36,15 +35,6 @@ class Jumbo extends React.Component {
                     Contact Us
                   </button>
                 </Link>
-                {/* <Link to="/bld">
-                  <button
-                    className="jumbo-btn"
-                    id="bld-btn"
-                    value="Blood Donation"
-                  >
-                    Blood Donation
-                  </button>
-                </Link> */}
                 <Link to="/vols">
                   <button
                     className="jumbo-btn"
@@ -57,13 +47,12 @@ class Jumbo extends React.Component {
               </div>
             </div>
             <div className="img-holder">
-              <img src={this.props.image} alt="" className="jumbo-img" />
+              <img src={props.image} alt="" className="jumbo-img" />
             </div>
           </div>
         </div>
       </>
     );
-  }
 }
 
 export default Jumbo;

@@ -48,8 +48,8 @@ class Volunteers extends React.Component {
                   <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
                 </div>
               ) : (
-                this.state.list.map((data,key) => (
-                  <Suspense fallback={<p></p>} key={key}>
+                this.state.list.map((data) => (
+                  <Suspense fallback={<p></p>} key={data.id}>
                     <VolunteerCard
                       imgsrc={data.avatarurl}
                       name={data.name}

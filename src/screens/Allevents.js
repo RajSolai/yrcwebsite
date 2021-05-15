@@ -1,9 +1,9 @@
-import React,{ Suspense , Component , lazy } from "react";
+import React,{ Suspense , PureComponent , lazy } from "react";
 import Axios from "axios";
 
 const EventCard = lazy(() => import("../components/EventCard"));
 
-class Allevents extends Component {
+class Allevents extends PureComponent {
   constructor() {
     super();
     this.state = {
@@ -11,8 +11,8 @@ class Allevents extends Component {
       isloading: true,
     };
   }
-  componentDidMount() {
-    Axios.get("https://vec-yrc-api.herokuapp.com/events").then((res) => {
+  async componentDidMount() {
+    await Axios.get("https://vec-yrc-api.herokuapp.com/events").then((res) => {
       this.setState({ events: res.data, isloading: false });
     });
   }
@@ -26,8 +26,8 @@ class Allevents extends Component {
               <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
             </div>
           ) : (
-            this.state.events.map((data,key) => (
-              <Suspense fallback={<p></p>} key={key}>
+            this.state.events.map((data) => (
+              <Suspense fallback={<p></p>} key={data.id}>
                 <EventCard
                   date={data.uploaddate}
                   imgsrc={data.imgurl}

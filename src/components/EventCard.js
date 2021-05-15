@@ -1,14 +1,13 @@
 import React from "react";
 import "./../theme/components.scss";
 
-class EventCard extends React.Component {
-  render() {
+const EventCard = (props) => {
     return (
       <>
         <div className="card">
           <img
-            src={this.props.imgsrc}
-            alt={this.props.imgtag}
+            src={props.imgsrc}
+            alt={props.imgtag}
             className="card-img"
           />
           <div className="card-content">
@@ -17,17 +16,16 @@ class EventCard extends React.Component {
                 color: "grey",
               }}
             >
-              {this.props.date}
+              {props.date}
             </h4>
-            <h2 className="card-title">{this.props.title}</h2>
+            <h2 className="card-title">{props.title}</h2>
             <div className="story">
-              <p>{this.props.story}</p>
+              <p>{props.story}</p>
             </div>
           </div>
         </div>
       </>
     );
-  }
 }
 
 export default EventCard;

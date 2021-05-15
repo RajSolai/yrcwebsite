@@ -4,18 +4,16 @@ import Axios from "axios";
 import thumb from "../assets/thumb.png";
 import noimg from "../assets/noimg.jpeg";
 import Jumbo from "../components/Jumbo";
-import Footer from "../components/footer";
 
 const RecentCard = React.lazy(() => import("../components/Recentcard"));
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       recentEvent: [],
       isloading: true,
     };
-    //this.openPost = this.openPost.bind(this);
   }
   async componentDidMount() {
     await Axios.get("https://vec-yrc-api.herokuapp.com/recents").then((res) => {
@@ -24,11 +22,7 @@ class Home extends React.Component {
       throw err;
     });
   }
-  // async openPost(datas) {
-  //   let temp = JSON.stringify(datas);
-  //   await localStorage.setItem("tempxx", temp);
-  //   this.props.history.push("/article");
-  // }
+
   render() {
     return (
       <>
@@ -43,8 +37,8 @@ class Home extends React.Component {
                   <strong style={{ marginLeft: ".5rem" }}>Loading...</strong>
                 </div>
               ) : (
-                this.state.recentEvent.map((data,key) => (
-                  <Suspense fallback={<div></div>} key={key}>
+                this.state.recentEvent.map((data) => (
+                  <Suspense fallback={<div></div>} key={data.id}>
                     <RecentCard
                       title={data.title}
                       imgurl={data.imgurl}
@@ -58,7 +52,6 @@ class Home extends React.Component {
             </div>
           </main>
         </div>
-        <Footer></Footer>
       </>
     );
   }

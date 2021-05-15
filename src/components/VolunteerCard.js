@@ -3,8 +3,7 @@ import { Paper } from "@material-ui/core";
 import usericon from "../assets/usericon.png";
 import "./../theme/components.scss";
 
-class VolunteerCard extends React.Component {
-  render() {
+const VolunteerCard = () => {
     return (
       <>
         <div
@@ -48,7 +47,6 @@ class VolunteerCard extends React.Component {
         </div>
       </>
     );
-  }
 }
 
 export default VolunteerCard;

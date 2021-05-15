@@ -1,29 +1,27 @@
 import React from "react";
 
-class RecentCard extends React.Component {
-  render() {
+const RecentCard = (props) => {
     return (
       <>
         <div className="card">
           <img
             src={
-              this.props.imgurl === "" || null
-                ? this.props.noimg
-                : this.props.imgurl
+              props.imgurl === "" || null
+                ? props.noimg
+                : props.imgurl
             }
-            alt={this.props.imgtag}
+            alt={props.imgtag}
             className="card-img"
           />
           <div className="card-content">
-            <h2 className="card-title">{this.props.title}</h2>
+            <h2 className="card-title">{props.title}</h2>
             <div className="story">
-              <p>{this.props.desc}</p>
+              <p>{props.desc}</p>
             </div>
           </div>
         </div>
       </>
     );
-  }
 }
 
 export default RecentCard;

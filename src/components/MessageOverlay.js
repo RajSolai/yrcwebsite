@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Paper } from "@material-ui/core";
 
-class MessageOverlay extends Component {
-  render() {
-    if (this.props.variant === "success") {
+const MessageOverlay = (props) => {
+    if (props.variant === "success") {
       return (
         <>
           <Paper
@@ -15,11 +14,11 @@ class MessageOverlay extends Component {
               color: "#fff",
             }}
           >
-            {this.props.message}
+            {props.message}
           </Paper>
         </>
       );
-    } else if (this.props.variant === "error") {
+    } else if (props.variant === "error") {
       return (
         <>
           <Paper
@@ -31,7 +30,7 @@ class MessageOverlay extends Component {
               color: "#fff",
             }}
           >
-            {this.props.message}
+            {props.message}
           </Paper>
         </>
       );
@@ -47,12 +46,11 @@ class MessageOverlay extends Component {
               color: "#fff",
             }}
           >
-            {this.props.message}
+            {props.message}
           </Paper>
         </>
       );
     }
-  }
 }
 
 export default MessageOverlay;
