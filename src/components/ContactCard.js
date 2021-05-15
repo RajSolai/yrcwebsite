@@ -1,5 +1,6 @@
 import React from "react";
-import { Paper, Divider } from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
+import Divider from "@material-ui/core/Divider";
 import { PhoneRounded, MailRounded } from "@material-ui/icons";
 
 const ContactCard = (props) => {
