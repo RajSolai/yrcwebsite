@@ -1,4 +1,4 @@
-import React,{Component} from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import Container from "@material-ui/core/Container";
@@ -12,8 +12,8 @@ import MessageOverlay from "../components/MessageOverlay";
 import Footer from "../components/footer";
 
 class Registration extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       avatarurl: "",
       avatarurlBackup: "",
@@ -55,19 +55,19 @@ class Registration extends Component {
   }
   async handleUploadSuccess(filename) {
     await firebase
-      	.storage()
-      	.ref("avatars")
-      	.child(filename)
-      	.getDownloadURL()
-      	.then((url) => {
-       		document.getElementById("spinner").style.display = "none";
-        	document.getElementById("progress").style.display = "inline";
-        	this.setState({
-          		avatarurl: url,
-          		process: "100% uploaded",
-          		avatarurlBackup: url,
-        	});
-      	});
+      .storage()
+      .ref("avatars")
+      .child(filename)
+      .getDownloadURL()
+      .then((url) => {
+        document.getElementById("spinner").style.display = "none";
+        document.getElementById("progress").style.display = "inline";
+        this.setState({
+          avatarurl: url,
+          process: "100% uploaded",
+          avatarurlBackup: url,
+        });
+      });
   }
   async handleUploadError() {
     await alert("Image Upload error");
@@ -84,10 +84,10 @@ class Registration extends Component {
       year: this.state.year,
     };
     await Axios.post("https://vec-yrc-api.herokuapp.com/volunteers/add", data)
-      .then((res) => {
+      .then(() => {
         document.getElementById("feedback").style.display = "inline";
       })
-      .catch((err) => {
+      .catch(() => {
         document.getElementById("error").style.display = "inline";
       });
   }
@@ -115,7 +115,7 @@ class Registration extends Component {
                   variant="outlined"
                   onChange={this.handleInputChange}
                   fullWidth
-                  style={{ margin: 8 }}
+                  className="margin-8"
                   name="name"
                   value={this.state.name}
                 />
@@ -149,15 +149,11 @@ class Registration extends Component {
                 <br></br>
                 <div id="spinner" style={{ display: "none" }}>
                   <LinearProgress color="secondary"></LinearProgress>
-                  <p style={{ fontWeight: "600", color: "#ed1c24" }}>
-                    Uploading Image
-                  </p>
+                  <p className="uploading-img">Uploading Image</p>
                 </div>
                 <div>
                   <FormControlLabel
-                    style={{
-                      zIndex: "0",
-                    }}
+                    className="z-zero"
                     control={
                       <Switch
                         checked={this.state.privacychecked}
@@ -169,11 +165,10 @@ class Registration extends Component {
                   />
                 </div>
                 <span
-                  className="progress"
+                  className="progress progress-span"
                   id="progress"
                   role="img"
                   aria-label="msg"
-                  style={{ display: "none", color: "green", margin: "1rem" }}
                 >
                   DP Uploaded Succesfully 🤩
                 </span>
@@ -183,13 +178,13 @@ class Registration extends Component {
                   variant="outlined"
                   fullWidth
                   onChange={this.handleInputChange}
-                  style={{ margin: 8 }}
+                  className="margin-8"
                   name="year"
                   value={this.state.year}
                 />
                 <br></br>
                 <TextField
-                  style={{ margin: 8 }}
+                  className="margin-8"
                   fullWidth
                   onChange={this.handleInputChange}
                   label="Enter Your Department"
@@ -199,7 +194,7 @@ class Registration extends Component {
                 />
                 <br></br>
                 <TextField
-                  style={{ margin: 8 }}
+                  className="margin-8"
                   fullWidth
                   onChange={this.handleInputChange}
                   label="Enter Your Contact Number"

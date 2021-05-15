@@ -1,6 +1,14 @@
 @import "mixins";
 @import "variables";
 
+.contact-card {
+  padding: "1rem";
+  margin: "1rem";
+  border-radius: "8px";
+  white-space: nowrap;
+  overflow: "hidden";
+  text-overflow: "ellipsis";
+}
 .footer {
   margin-top: 15rem;
   background-color: #e5e5e5;
@@ -32,6 +40,44 @@
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.margin-l-1 {
+  margin-left: 1rem;
+}
+.margin-1 {
+  margin: 1rem;
+}
+.margin-8 {
+  margin: 8px;
+}
+.margin-l-05 {
+  margin-left: 0.5rem;
+}
+.uploading-img {
+  font-weight: 600;
+  color: $primary;
+}
+.z-zero {
+  z-index: 0;
+}
+.progress-span {
+  display: none;
+  color: green;
+  margin: 1rem;
+}
+.overlay-paper {
+  background-color: #0e9aa7;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin: 1rem;
+  color: #fff;
+}
+.overlay-ok {
+  background-color: #a8df65 !important;
+}
+.overlay-error {
+  background-color: #e43f5a !important;
+}
+
 .fb {
   @include flex(row, center);
 }
@@ -51,6 +97,11 @@
   border-radius: 8px;
   color: $primary-black;
   box-shadow: $secondary-shadow-dark;
+  .jumbo-title {
+    font-family: serif;
+    font-weight: bold;
+    font-size: 35px;
+  }
   .jumbo-btn {
     margin: 0.2rem;
     background-color: $primary;

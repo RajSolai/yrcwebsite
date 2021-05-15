@@ -44,7 +44,7 @@ h6 {
   flex-direction: row;
   justify-content: center;
 }
-.spacer-6{
+.spacer-6 {
   margin-top: 6rem;
 }
 .form {
@@ -125,6 +125,10 @@ Link,
 }
 .animated-notice {
   @include colorchange();
+  margin: "1rem";
+  padding: ".5rem";
+  background-color: "#900c3f";
+  color: "#fff";
 }
 /* for card */
 .envelope {
@@ -188,8 +192,8 @@ button {
     align-self: center;
   }
 }
-@media only screen and (min-width: 1000px){
-  .card-img{
+@media only screen and (min-width: 1000px) {
+  .card-img {
     height: auto;
   }
 }
@@ -217,7 +221,7 @@ button {
   .nav-item {
     margin: 0.2rem;
   }
-  .card{
+  .card {
     width: 90vw;
   }
 }

@@ -1,11 +1,11 @@
-import React,{Component , lazy , Suspense} from "react";
+import React, { Component, lazy, Suspense } from "react";
 import Axios from "axios";
 import Paper from "@material-ui/core/Paper";
-import Link from "react-router-dom/Link";
+import { Link } from "react-router-dom";
 import Footer from "../components/footer";
 import "../theme/components.scss";
 
-const VolunteerCard = lazy(()=>import("../components/VolunteerCard"));
+const VolunteerCard = lazy(() => import("../components/VolunteerCard"));
 
 class Volunteers extends Component {
   constructor(props) {
@@ -16,34 +16,28 @@ class Volunteers extends Component {
     };
   }
   async componentDidMount() {
-    await Axios.get("https://vec-yrc-api.herokuapp.com/volunteers").then((data) => {
-      this.setState({ list: data.data, isloading: false });
-    });
+    await Axios.get("https://vec-yrc-api.herokuapp.com/volunteers").then(
+      (data) => {
+        this.setState({ list: data.data, isloading: false });
+      }
+    );
   }
   render() {
     return (
       <>
-        <section>
+        <main>
           <div className="app">
             <div className="spacer-6"></div>
             <Link to="newvols" className="link">
-              <Paper
-                className="animated-notice"
-                style={{
-                  margin: "1rem",
-                  padding: ".5rem",
-                  backgroundColor: "#900c3f",
-                  color: "#fff",
-                }}
-              >
+              <Paper className="animated-notice">
                 <h1 style={{ textAlign: "center" }}>
                   Click here to Register Yourself as Volunteer !
                 </h1>
               </Paper>
             </Link>
-            <main className="vol-cont">
+            <div className="vol-cont">
               {this.state.isloading === true ? (
-                  <strong style={{ marginLeft: ".5rem" }}>Loading...</strong>
+                <strong className="margin-l-05">Loading...</strong>
               ) : (
                 this.state.list.map((data) => (
                   <Suspense fallback={<div></div>} key={data.id}>
@@ -56,9 +50,9 @@ class Volunteers extends Component {
                   </Suspense>
                 ))
               )}
-            </main>
+            </div>
           </div>
-        </section>
+        </main>
         <Footer></Footer>
       </>
     );

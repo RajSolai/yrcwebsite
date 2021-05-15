@@ -7,17 +7,7 @@ import MailRounded from "@material-ui/icons/MailRounded";
 const ContactCard = (props) => {
   return (
     <>
-      <Paper
-        style={{
-          padding: "1rem",
-          margin: "1rem",
-          borderRadius: "8px",
-          whiteSpace: "nowrap",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-        }}
-        elevation={5}
-      >
+      <Paper className="contact-card" elevation={5}>
         <h2>{props.name}</h2>
         <Divider></Divider>
         <p>{props.position}</p>

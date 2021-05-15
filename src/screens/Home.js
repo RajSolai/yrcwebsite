@@ -1,4 +1,4 @@
-import React , {Suspense , PureComponent , lazy} from "react";
+import React, { Suspense, PureComponent, lazy } from "react";
 import "../theme/App.scss";
 import Axios from "axios";
 import thumb from "../assets/thumb.png";
@@ -18,8 +18,6 @@ class Home extends PureComponent {
   async componentDidMount() {
     await Axios.get("https://vec-yrc-api.herokuapp.com/recents").then((res) => {
       this.setState({ recentEvent: res.data, isloading: false });
-    }).catch(err=>{
-      throw err;
     });
   }
 
@@ -30,10 +28,10 @@ class Home extends PureComponent {
           <div className="spacer-6"></div>
           <Jumbo image={thumb}></Jumbo>
           <main>
-            <h3 style={{ marginLeft: "1rem" }}>Recent Posts</h3>
+            <h3 className="margin-l-1">Recent Posts</h3>
             <div className="envelope" id="envelope">
               {this.state.isloading === true ? (
-                  <strong style={{ marginLeft: ".5rem" }}>Loading...</strong>
+                <strong className="margin-l-05">Loading...</strong>
               ) : (
                 this.state.recentEvent.map((data) => (
                   <Suspense fallback={<div></div>} key={data.id}>

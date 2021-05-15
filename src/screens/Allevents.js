@@ -23,7 +23,7 @@ class Allevents extends PureComponent {
           <div className="spacer-6"></div>
           <div className="envelope">
             {this.state.isloading === true ? (
-              <strong style={{ marginLeft: ".5rem" }}>Loading</strong>
+              <strong className="margin-l-05">Loading</strong>
             ) : (
               this.state.events.map((data) => (
                 <Suspense fallback={<p></p>} key={data.id}>
