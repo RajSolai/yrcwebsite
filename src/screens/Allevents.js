@@ -4,6 +4,8 @@ import Axios from "axios";
 const EventCard = lazy(() => import("../components/EventCard"));
 
 class Allevents extends PureComponent {
+  actionUrl =
+    "https://eu-gb.functions.appdomain.cloud/api/v1/web/msraj085%40gmail.com_dev/default/yrcwebapi_get_events";
   constructor() {
     super();
     this.state = {
@@ -12,8 +14,8 @@ class Allevents extends PureComponent {
     };
   }
   async componentDidMount() {
-    await Axios.get("https://vec-yrc-api.herokuapp.com/events").then((res) => {
-      this.setState({ events: res.data, isloading: false });
+    await Axios.get(this.actionUrl).then((res) => {
+      this.setState({ events: res.data.result, isloading: false });
     });
   }
   render() {
@@ -25,8 +27,8 @@ class Allevents extends PureComponent {
             {this.state.isloading === true ? (
               <strong className="margin-l-05">Loading</strong>
             ) : (
-              this.state.events.map((data) => (
-                <Suspense fallback={<p></p>} key={data.id}>
+              this.state.events.map((data, key) => (
+                <Suspense fallback={<p></p>} key={key}>
                   <EventCard
                     date={data.uploaddate}
                     imgsrc={data.imgurl}

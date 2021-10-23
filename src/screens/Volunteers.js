@@ -8,6 +8,8 @@ import "../theme/components.scss";
 const VolunteerCard = lazy(() => import("../components/VolunteerCard"));
 
 class Volunteers extends Component {
+  actionUrl =
+    "https://eu-gb.functions.appdomain.cloud/api/v1/web/msraj085%40gmail.com_dev/default/yrcwebapi_get_volunteers";
   constructor(props) {
     super(props);
     this.state = {
@@ -15,12 +17,11 @@ class Volunteers extends Component {
       isloading: true,
     };
   }
-  async componentDidMount() {
-    await Axios.get("https://vec-yrc-api.herokuapp.com/volunteers").then(
-      (data) => {
-        this.setState({ list: data.data, isloading: false });
-      }
-    );
+  componentDidMount() {
+    Axios.get(this.actionUrl).then((data) => {
+      console.log(data);
+      this.setState({ list: data.data.result, isloading: false });
+    });
   }
   render() {
     return (
@@ -39,8 +40,8 @@ class Volunteers extends Component {
               {this.state.isloading === true ? (
                 <strong className="margin-l-05">Loading...</strong>
               ) : (
-                this.state.list.map((data) => (
-                  <Suspense fallback={<div></div>} key={data.id}>
+                this.state.list.map((data, key) => (
+                  <Suspense fallback={<div></div>} key={key}>
                     <VolunteerCard
                       imgsrc={data.avatarurl}
                       name={data.name}

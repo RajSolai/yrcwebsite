@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import Container from "@material-ui/core/Container";
+import { nanoid } from "nanoid";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -12,6 +13,8 @@ import MessageOverlay from "../components/MessageOverlay";
 import Footer from "../components/footer";
 
 class Registration extends Component {
+  actionUrl =
+    "https://eu-gb.functions.appdomain.cloud/api/v1/web/msraj085%40gmail.com_dev/default/yrcwebapi_add_volunteer";
   constructor() {
     super();
     this.state = {
@@ -75,16 +78,20 @@ class Registration extends Component {
   handleUploadStart() {
     document.getElementById("spinner").style.display = "inline";
   }
-  async postEvent() {
+  postEvent() {
     let data = {
-      avatarurl: this.state.avatarurl,
-      name: this.state.name,
-      contact: this.state.contact,
-      dept: this.state.dept,
-      year: this.state.year,
+      vol: {
+        uid: nanoid(8),
+        avatarurl: this.state.avatarurl,
+        name: this.state.name,
+        contact: this.state.contact,
+        dept: this.state.dept,
+        year: this.state.year,
+      },
     };
-    await Axios.post("https://vec-yrc-api.herokuapp.com/volunteers/add", data)
-      .then(() => {
+    Axios.post(this.actionUrl, data)
+      .then((res) => {
+        console.log(res);
         document.getElementById("feedback").style.display = "inline";
       })
       .catch(() => {

@@ -8,6 +8,8 @@ import Jumbo from "../components/Jumbo";
 const RecentCard = lazy(() => import("../components/Recentcard"));
 
 class Home extends PureComponent {
+  recentAction =
+    "https://eu-gb.functions.appdomain.cloud/api/v1/web/msraj085%40gmail.com_dev/default/yrcwebapi_get_recent_events";
   constructor() {
     super();
     this.state = {
@@ -16,8 +18,8 @@ class Home extends PureComponent {
     };
   }
   async componentDidMount() {
-    await Axios.get("https://vec-yrc-api.herokuapp.com/recents").then((res) => {
-      this.setState({ recentEvent: res.data, isloading: false });
+    await Axios.get(this.recentAction).then((res) => {
+      this.setState({ recentEvent: res.data.result, isloading: false });
     });
   }
 
